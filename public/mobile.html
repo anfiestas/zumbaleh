@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale = 1.0,  user-scalable=no" />
+<link rel="icon" href="favicon.png" type="image/x-icon" />
+    <title>zumbaleh!</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0/jquery.mobile-1.0.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0/jquery.mobile.structure-1.0.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0/plugins/jquery.mobile.simpledialog.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/mobile/body-mobile.css" />
+	<link rel="stylesheet" type="text/css" href="css/mobile/body-mobile-structure.css" />
+	<link rel="stylesheet" type="text/css" href="css/mobile/jquery-ui-1.8.17.custom.css" />
+	<script type="text/JavaScript" src="javascripts/lib/ext/jquery-1.6.4.min.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/ext/jquery.base64.min.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/ext/crypto-sha1-hmac.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/ext/crypto-sha1.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/ext/crypto-md5.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/ext/crypto-sha1-hmac-pbkdf2-blockmodes-aes.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/ext/crypto-min.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/ext/jquery-ui-1.8.17.custom.min.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/ext/jquery.mobile-1.0/jquery.mobile-1.0.1.min.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/ext/jquery.mobile-1.0/plugins/jquery.mobile.simpledialog.min.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/http-authenticator.js"></script>
+	<script type="text/JavaScript" src="javascripts/model/MessageIM.js"></script>
+	<script type="text/JavaScript" src="javascripts/model/Contact.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/helper/ContactsHelper.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/helper/ConversationsHelper.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/helper/ChatHelper.js"></script>
+	<script type="text/JavaScript" src="javascripts/lib/globalTools.js"></script>
+    <script type="text/JavaScript" src="javascripts/views/ContactsView.js"></script>
+    <script type="text/JavaScript" src="javascripts/views/ConversationsView.js"></script>
+    <script type="text/JavaScript" src="javascripts/views/ChatView.js"></script>
+	<script type="text/JavaScript" src="javascripts/controllers/InitController.js"></script>
+	<script type="text/JavaScript" src="javascripts/controllers/OptionsMenuController.js"></script>
+	<script type="text/JavaScript" src="javascripts/controllers/UploadMediaController.js"></script>
+	<script type="text/JavaScript" src="javascripts/controllers/ConversationsController.js"></script>
+	<script type="text/JavaScript" src="javascripts/controllers/mobile/ChatController.js"></script>
+	<script type="text/JavaScript" src="javascripts/controllers/ContactController.js"></script>
+	<script type="text/JavaScript" src="javascripts/controllers/LoginController.js"></script>
+	<script type="text/JavaScript" src="javascripts/controllers/RegisterController.js"></script>
+
+
+</head>
+<body>
+	<nav id="menuBar">
+	<ul id="menuLogout">
+	<li onclick="logoutAction()"><label id="userAccount"></label> <br/> Logout </li>
+	</ul>
+		<!--  ul id="menuBarList">
+			<li onclick="loadURL('account/settings')">Options</li>
+			<li onclick="loadURL('credits/selection')">Buy Credits</li>
+			<li onclick="loadURL('contact/form')">Help</li>
+		</ul-->
+	</nav>
+<!----------------- begin Send page ------------------------>
+	<section id="login-register" data-role="page" data-scroll="false" >
+	  <header data-role="header" data-position="inline"  data-id="toolbarMenu">
+               <div id="logo" class="column">
+			<img alt="zumbaleh!" src="images/mobile/logo_menu_principal.png" width="120" height="24" />
+	     </div>
+		
+	  </header>
+	 	 <div class="content" data-role="content">
+
+					<fieldset data-role="fieldcontain">
+					<label for="login_name">Enter your login</label> 
+					  <input type="text" name="login_name" id="login_name" placeholder="Email / Phone / PIN" />
+					 
+					 <label for="login_pass">Password</label> 
+					  <input type="password" name="login_pass" id="login_pass" placeholder="Password"/>
+					 
+					  <button type="button" name="submit" id="submitLogin">Log In</button>
+					  </fieldset>
+
+					  <!-- p>You don't have an account</p>
+					  <a href="#register" data-role="button">Sign Up</a>
+					  <p class="center_text"><a class="more" href="/n2websms/public/en/account/recovery">Can't access to your account? </a></p-->
+                <h3>zumbaleh! Communication made easy</h3>			 
+				 <table width="90%" cellspacing="0" cellpadding="0" border="0">
+					 <tr>
+					  <td class="feature-image"><img width="42" height="37" alt="" src="images/icono_web.png"/></td>
+					  <td class="feature-description">
+					    <p>Communication made easy, talk with anybody at anytime.</p>
+					    <p>Share with no limits with your friends or colleges.</p>
+					    <p>Publish your opinions and status in real time.</p>
+					    <p>Create groups and meet new people near you.</p>
+					    <p>Add new contacts without giving any personal information away.</p>
+					  </td>
+					  </tr>
+					   
+				</table>
+		
+
+         </div>		  
+
+	 
+	</section>
+	<!----------------- end send page ------------------------>
+<!----------------- begin Send page ------------------------>
+	<section id="register" data-role="page" data-scroll="false" >
+	  <header data-role="header" data-position="inline"  data-id="toolbarMenu">
+	        <a id="backButton" href="#login-register" data-rel="back" data-icon="back" data-transition="slide">Back</a>
+		
+	  </header>
+	 	 <div class="content" data-role="content">
+	 		 <h2>Sign Up Now</h2>
+			<fieldset data-role="fieldcontain">
+				<label for="register_name">Email</label> 
+				<input type="text" name="register_name" id="register_name" />
+					 
+				<label for="register_pass">Password</label> 
+			    <input type="password" name="register_pass" id="register_pass"/> 
+				<label for="register_pass_2">Re-enter Password</label> 
+				<input type="password" name="register_pass_2" id="register_pass_2"/>
+				<br/>
+				<button type="button" name="submit" id="submitRegister">Create my account</button>
+			</fieldset>
+	 	 </div> 
+	</section>
+	<!----------------- end send page ------------------------>
+<!----------------- begin Conversations page ------------------------>
+	<section id="conversations" data-role="page" data-scroll="true" data-title="Conversations">
+
+	<header data-role="header" data-position="fixed"  data-id="toolbarMenu">
+        
+	  <!-- div id="userBarCredits"> <span class="credits">82</span> SMS credits</div-->
+	  <div id="logo" class="column">
+			<img alt="zumbaleh!" src="images/mobile/logo_menu_principal.png" width="120" height="24" />
+	     </div>
+		<nav id="mainBar" data-role="navbar">
+		<ul>
+			<li><a href="#conversations" data-transition="none" class="ui-btn-active ui-state-persist"><img width="55" height="54" src="images/icon_messages_list.png" alt=""><br />Conversations</a></li>
+			<!-- li><a href="#sms-send" data-transition="none"><img width="55" height="54" src="images/icon_new_message.png" alt=""><br />New</a></li-->
+		    <li onclick="showMenuBar()" ><a href=""><img width="55" height="54" src="images/icon_options.png" alt=""></a> </li>
+		</ul>
+		</nav>
+	  </header>
+	<div class="content" data-role="content">
+		<div class="ui-block-b" data-scroll="true">
+			<div class="reportsList">
+				<ul data-role="listview">
+					
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+	</section>
+<!----------------- end Conversations page ------------------------>
+
+<!----------------- begin Chat page ------------------------>
+	<section id="chat" data-role="page" data-scroll="true" data-title="Chat">
+
+	<header data-role="header" data-id="toolbarMenu">
+        
+	  <div id="contactChatBar">
+	        <img src="images/mobile/contactNoPicture.png" /> 
+	   </div>
+	   <span id="contactName"></span>
+		<nav id="mainBar" data-role="navbar">
+		<ul>
+			<li><a href="#conversations" data-transition="none" class="ui-btn-active ui-state-persist"><img width="55" height="54" src="images/icon_messages_list.png" alt=""><br />Conversations</a></li>
+			<li onclick="showFileSelectDialog()"><a href=""><img width="55" height="54" src="images/icon_attachment.png" alt=""/> 
+		    <form id="upload_form" enctype="multipart/form-data" method="post" action="">
+		    <input type="file" id="fileUpload" class="hidden" onchange="startUploading();"/>
+		    </form>
+		    </a> </li>
+		
+		    
+		</ul>
+		</nav>
+	  </header>
+	<div id="chatList" class="content" data-role="content" data-scroll="true">
+
+	</div>
+		<div id="sendBarDiv" data-role="footer"> 
+			<nav id="sendBar" data-role="navbar">
+				<ul>
+					<!-- li><a id="sendMode" data-transition="none" class="ui-btn-active ui-state-persist"><span id="notSelectedModeText">IM</span></a></li!-->
+					<li><input type="text" name="new_message" id="new_message" data-theme="c"></textarea></li>
+					<li> <button id="submitSendMessage" type="submit" name="submit" data-theme="c">Send</button></li>
+				</ul>
+			</nav>
+		</div> 
+
+	</section>
+<!----------------- end Chat page ------------------------>
+
+<!----------------- begin Send page ------------------------>
+	<section id="sms-send" data-role="page" data-scroll="false" data-title="New SMS">
+	  <header data-role="header" data-position="fixed"  data-id="toolbarMenu">
+	        <a id="backButton" href="#send" data-rel="back" data-icon="back" data-transition="none">Back</a>
+         
+	  <!-- div id="userBarCredits"> <span class="credits">0</span> SMS credits </div-->
+
+		<nav id="mainBar" data-role="navbar">
+		<ul>
+			<li><a href="#conversations" data-transition="none"><img width="55" height="54" src="images/icon_messages_list.png" alt=""><br />Conversations</a></li>
+			<li><a href="#sms-send" data-transition="none" class="ui-btn-active ui-state-persist"><img width="55" height="54" src="images/icon_new_message.png" alt=""><br />New</a></li>
+		    <li onclick="showMenuBar()" ><a href=""><img width="55" height="54" src="images/icon_options.png" alt=""></a> </li>
+		</ul>
+		</nav>	
+	  </header>
+	   
+      	  <div class="content" data-role="content">
+
+				<div class="ui-block-b" data-scroll="true">
+				
+					 <label for="sms_to_numbers" >To</label>
+					 <input type="text" name="sms_to_numbers" id="sms_to_numbers" placeholder="Contact name"></textarea>
+					 <br/>
+					 
+					
+					 <label for="sms_text">Text message</label>
+					  <textarea name="sms_text" id="sms_text" onkeyup="updateCharsCounter()"></textarea>
+					
+					  Chars Left:<b><span id="charsCount">160</span></b>
+					  <br/> <br/>
+					  <button id="submitSendSMS" type="submit" name="submit">Send message</button>
+					 
+
+            </div>
+	     </div>
+	 
+	</section>
+<!----------------- end send page ------------------------>
+
+<!----------------- begin Contacts page ------------------------>
+
+<!----------------- end contacts page ------------------------>
+<section id="dialogRemove" data-role="page">
+<header data-role="header" data-position="inline"  data-id="toolbarMenu">
+<h1>Remove Contact?</h1>
+</header>
+
+ <div class="content" data-role="content">
+ <p>Do you want to remove the contact?</p>
+ </div>
+<div data-role="footer">
+<h4></h4>
+</div>
+</section>
+
+<div class="notificationsBox">
+	<div class='notification'> </div>
+</div>
+
+  </body>
+</html>

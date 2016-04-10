@@ -1,0 +1,231 @@
+header .ui-navbar{
+float:right;
+position:relative;
+height:54px;
+
+}
+p{
+font-size:16x;	
+}
+.center_text {
+text-align: center;
+}
+h2{
+margin-top: 0px;
+}
+h3 {
+margin-top: 0px;
+word-spacing: 2px;
+margin-bottom: 0px;
+padding-left: 2px;
+color: black;
+border-left: 5px solid transparent;
+margin-top: 0px;
+padding-bottom: 0px;
+}
+#mainBar li .ui-btn .ui-btn-inner{
+padding-top:0em;
+padding-left:0em;
+}
+
+.floatRight{
+position:relative;
+float:right;
+}
+
+#logo {
+    display: block;
+    float: left;
+    height: 33px;
+    left: 0;
+    margin-left: 14px;
+    position: relative;
+    z-index: 9;
+    margin-right: 12px;
+    padding-right: 12px;
+    margin-top: 10px;
+}
+#userBarCredits {
+    float: left;
+	position:absolute;
+    margin-top: 24px;
+	margin-left:180px;
+}
+#contactChatBar {
+	float: left;
+	position: relative;
+}
+
+#contactName {
+margin-top:5px;
+margin-left:5px;
+position:relative;
+float:left;
+}
+
+.ui-header{
+height:54px;
+}
+/*.ui-header .ui-title{
+margin-top:40px;
+text-align:center;
+margin-right:0px;
+margin-left:0px;
+
+//comment this
+text-align:center;
+margin-left:0px;
+margin-right:0px;
+width:100%;
+
+}*/
+
+#backButton{
+margin-top: 12px;
+}
+header nav li a {
+    background-position: left top;
+    display: block;
+    float: left;
+    height: 54px;
+    margin-left: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 7px;
+    width: 55px;
+}
+/****** MenuBar *******/
+
+		#menuBar {
+			position: fixed; 
+			left:0px; 
+			top:-7em;
+			z-index:2000; 
+			width:100%;
+			padding: 0.25em;
+			clear: both;
+		}
+		
+		/* Use CSS3 transition to produce an animation effect for opening/closing the menuBar from the top bezel */
+		.showMenuBar {
+			-webkit-transition: all 0.5s ease-in-out;
+			-webkit-transform: translate(0, 7em);		
+		}
+		.hideMenuBar {
+			-webkit-transition: all 0.5s ease-in-out;
+			-webkit-transform: translate(0, -7em);
+			/*display:none;*/
+		}
+		
+		/* Use list elements to define and organize 'buttons' that the user can interact with from the menuBar */
+		#menuBar ul { 
+			margin: 0; 
+			padding:0; 
+		}
+		#menuBar ul li { 
+			float: left; 
+			margin-right: 0.5em; 
+			padding: 0.25em; 
+            height:40px;
+		}
+		
+		/* Position groups of buttons on each side of the menuBar */
+		#menuBarLinks { 
+			float: left; 
+		}
+		#menuBarList { 
+			float: right; 
+		}
+/***************Login******************/
+
+.feature-image {
+padding: 15px 0 0;
+text-align: right;
+vertical-align: top;
+}
+.feature-description {
+padding: 0px 0 0 10px;
+text-align: left;
+vertical-align: top;
+}
+/*****Global*****/
+.ui-block-a{
+width:25%;
+height:100%
+}
+.ui-block-b{
+width:100%;
+height:100%
+
+}
+/*TODO: 
+.content .ui-block-b{
+	 overflow-y: auto;
+	 overflow-x: hidden;
+}*/
+/******** Contacts *******/
+
+.ui-block-b .content-bar.ui-bar {
+border-width: 0;
+margin: -15px -15px 0px 15px;
+overflow: hidden;
+min-height:91%;
+}
+
+.ui-content .ui-listview {
+margin-right: 0;
+}
+#contacts .ui-content .ui-block-a .ui-listview {
+ overflow-y: scroll;
+}
+
+/*Form select*/
+#contacts .ui-field-contain .ui-select {
+width: 20%;
+display: inline-block;
+}
+
+/******** Conversations ********/
+/*#reports .ui-content .ui-block-a .ui-listview {
+ overflow-y: scroll;
+}
+*/
+#reports .ui-block-b .reportsList {
+/*border-width: 0;*/
+/*margin: -15px -15px 0px 30px;*/
+/*overflow: hidden;*/
+}
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
+padding-left:57px;
+min-height:55px;
+}
+.ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li {	
+padding: 0px 15px 0em 15px;
+display:block;
+margin-left:38px;
+}
+#conversations h3{
+border-left:0px;
+margin-top:1px;
+}
+.ui-li-desc {
+font-size: 10px;
+font-weight: normal;
+display: block;
+margin: -16px 18px .6em;
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+}
+/******** Send-sms *******/
+/*#sms-send .ui-content .ui-block-a .ui-listview {
+ overflow-y: scroll;
+}
+*/
+/****Conversations******/
+#chat .ui-input-text{
+height:25px;
+width: 94%;
+}
+/******* Notifications System ********/
+

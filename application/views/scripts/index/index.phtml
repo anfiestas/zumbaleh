@@ -1,0 +1,67 @@
+<?php $translate=Zend_Registry::get('Zend_Translate'); ?>
+ <script language="javascript">
+  function autoResizeDiv()
+        {
+            document.getElementById('mainContent').style.height = (window.innerHeight) +'px';
+        }
+        window.onresize = autoResizeDiv;
+        autoResizeDiv();
+</script>
+
+     <!--div class="row colTop">
+
+     	 <div class="column">
+     	 	    <div class="messageIcon">
+                <img src="" alt="" />
+                </div>
+                 <?php if($translate->getLocale()=="en"){ ?>
+                   <div id="textHeaderPrincipal1"><?php print $translate->_("zumbaleh_title1"); ?> <span style="color: #81c934;"><?php print $translate->_("zumbaleh_title1_1"); ?></span><?php print $translate->_("zumbaleh_title1_2"); ?></div>
+                <?php } else {?>
+                     <div id="textHeaderPrincipal1"><?php print $translate->_("zumbaleh_title1"); ?> <span style="color: #81c934;"><?php print $translate->_("zumbaleh_title1_1"); ?></span></div>
+                <?php } ?>
+
+               
+              
+     	 </div>
+     </div>
+	 
+	 <div class="row colDown">
+        <div class="column">
+            <div id="comingSoon">
+    			 <?php print $translate->_("coming_soon"); ?>
+            </div>
+            <div style="padding-top:40px;">
+                <form name="productform" id="productform" method="post"
+              action="<?php echo $this->url(array('lang'=>$translate->getLocale(),
+                                      'controller'=>'index',
+                                      'action'=>'index'), null, true);?>"
+              enctype="application/x-www-form-urlencoded">
+
+                    <input placeholder="<?php echo $translate->_("enter_mail"); ?>" class="inputText" type="text" size="13" name="contact[mail]" id="user_mail"
+                    value="<?php echo $this->mail; ?>" /> <?php if($this->errorMail!=null){ ?><span class="error_text"> <?php echo $translate->_($this->errorMail); ?> </span><?php }?>
+
+                      <input class="button" name="send" type="submit" value="<?php print $translate->_("send_button"); ?>"/>
+
+                      
+                        <?php if($this->mailSend=="TRUE") {?>
+                        <div style="font-size: 40px;font-weight: normal;padding-top:15px;color: #81c934;line-height: 100%;">
+                        <?php print $translate->_("mailSendOK");}else if($this->mailSend=="FALSE") { ?>
+
+                        <div style="font-size: 40px;font-weight: normal;padding-top:15px;color: #f6960d;line-height: 100%;">
+
+                        <?php print $translate->_("mailSendKO"); } else if($this->error=="errorEmptyMail") { ?>
+                        <div style="font-size: 40px;font-weight: normal;padding-top:15px;color: #f6960d;line-height: 100%;">
+                        <?php print $translate->_("errorEmptyMail"); } else if($this->error=="errorMail") { ?>
+                          <div style="font-size: 40px;font-weight: normal;padding-top:15px;color: #f6960d;line-height: 100%;">
+                            <?php print $translate->_("errorMail"); }?>
+                     </div>
+
+                    </form>
+            </div>
+         </div>
+    </div-->
+
+
+
+
+

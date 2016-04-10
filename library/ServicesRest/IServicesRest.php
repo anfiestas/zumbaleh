@@ -1,0 +1,1 @@
+<?phpinterface IServicesRest{	function send($user, $pass, $source, $target, $text, $sim);}

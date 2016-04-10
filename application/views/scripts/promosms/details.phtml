@@ -1,0 +1,86 @@
+<?php $translate=Zend_Registry::get('Zend_Translate'); ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>n2manager SMS | <?php print $translate->_("title_promo"); ?></title>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('body1.css'); ?>" />
+</head>
+
+<body>
+<div id="container" class="terms">
+<div id="bottomPanel" class="panel">
+
+	<form name="productform" id="productform" method="post"
+				  action="<?php echo $this->url(array('lang'=>$translate->getLocale(),
+										  'controller'=>'promosms',
+										  'action'=>'details'), null, true);?>"
+				  enctype="application/x-www-form-urlencoded">
+				  
+		 <div class="row">
+			 <h2><?php print $translate->_("title_promo"); ?></h2>
+			 <p><?php print $translate->_("promo_desc1"); ?> </p>
+			 <p><?php print $translate->_("promo_desc2"); ?> </p>	
+			 <p><?php print $translate->_("promo_desc3"); ?> </p>	
+			 <p><?php print $translate->_("promo_desc4"); ?> </p>			 
+            
+		 </div>
+		 <div class="column selection promoDetails">
+		 
+		 <h3><span class="promoHeader"><?php print $translate->_("promo_details_existing_user"); ?></span></h3>	
+			
+			<div class="radio">
+			<h4><?php print $translate->_("promo_last_pack"); ?></h4>
+
+				   <p><b>100 SMS</b><span> 	= <?php print $translate->_("10_free_SMS"); ?></span></p>
+				   <p><b>200 SMS</b><span> 	= <?php print $translate->_("20_free_SMS"); ?></span></p>
+				   <p><b>500 SMS</b><span> 	= <?php print $translate->_("50_free_SMS"); ?></span></p>
+				   <p><b>1000 SMS</b><span> = <?php print $translate->_("100_free_SMS"); ?></span></p>
+	
+			</div>
+		 
+		 </div>
+		 
+		 <div class="lastColumn selection">
+		 <h3><span class="promoHeader"><?php print $translate->_("promo_details_new_user"); ?></span></h3>
+		  <h4><?php print $translate->_("currency"); ?></h4>
+			 <select class="comboBox" name="currency" onchange="submit();" id="currency">
+				   <?php foreach($this->currencyList as $currency) : ?>
+		  
+						<option value="<?php echo $currency->getCode();?>"
+						   <?php if($this->userCurrency->getCode()==$currency->getCode()) echo "selected";?>>
+						  
+						   <?php echo $currency->getName()." (".$currency->getCode().")";?>
+					   </option>
+
+				   <?php endforeach; ?>
+				  </select>			 
+		       <div class="radio">
+			<h4><?php print $translate->_("promo_new_pack"); ?></h4>
+
+			<?php $first=TRUE; foreach($this->productList as $product) : ?>
+				 <p>
+				  <b><?php echo $product->getPriceAndSymbol(); ?></b></span>
+				  <span>
+				  <?php $price= $product->getPriceSms();
+						print $translate->_($product->getName())." (<b>".$price."</b> ";
+				  if($this->userCurrency->getCode()=="GBP") print $translate->_("pence");
+				  elseif($this->userCurrency->getCode()=="JPY") print $translate->_("yen");
+				  elseif($this->userCurrency->getCode()=="CHF") print $translate->_("centimes");
+				  else print $translate->_("cents");
+				  
+				  ?>  
+				  <?php print $translate->_("by_sms"); ?>
+				  </span>
+				</p>
+			<?php endforeach; ?>
+	
+			</div>
+		 </div>
+	</form>
+
+</div>
+</div>
+</body>
+</html>

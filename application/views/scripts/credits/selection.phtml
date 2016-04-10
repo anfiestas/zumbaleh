@@ -1,0 +1,258 @@
+<?php $translate=Zend_Registry::get('Zend_Translate'); ?>
+<?php
+
+$this->headTitle($translate->_("n2manager_title"));
+$this->headTitle($translate->_("choose_credits"));
+$this->headTitle()->setSeparator(' | ');
+?>
+
+<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('css/jquery.bubblepopup.v2.3.1.css'); ?>" />
+<script type="text/JavaScript" src="<?php echo $this->baseUrl('javascripts/jquery.bubblepopup.v2.3.1.min.js'); ?>"></script>
+
+<script type="text/javascript">
+<!--
+$(document).ready(loadPageBubbles);
+
+function loadPageBubbles(){
+			<?php if ($this->promoId==Constants::PROMO_BOCA_A_BOCA || $this->promoId==Constants::PROMO_EXISTING_USER){?>
+					//create a bubble popup for each DOM element with class attribute as "button"
+					var options = { innerHtml: '<?php if ($this->promoId==Constants::PROMO_BOCA_A_BOCA){print $translate->_("popup_boca_boca");}
+													  else if ($this->promoId==Constants::PROMO_EXISTING_USER){print $translate->_("popup_existing_user");}?>',
+									themeName:'<?php if ($this->promoId==Constants::PROMO_BOCA_A_BOCA){print "all-blue";}
+													  else if ($this->promoId==Constants::PROMO_EXISTING_USER){print "all-blue";}?>',
+									themePath:'<?php echo $this->baseUrl()."/"?>images/jquerybubblepopup-theme',
+									position:'right',
+									align:'middle',
+									distance: '250px',
+									manageMouseEvents:false,
+									alwaysVisible:true,
+									openingSpeed:900,
+									tableStyle:{margin:'8px'}
+								  };
+					$('.lastColumn .promoHeader').CreateBubblePopup(options);
+					$('.lastColumn .promoHeader').ShowBubblePopup( options );
+				
+				<?php }?>
+				
+				var options2 = { innerHtml: '<?php print $translate->_("popup_special_offers");?>',
+								themeName:'all-blue',
+								themePath:'<?php echo $this->baseUrl()."/"?>images/jquerybubblepopup-theme',
+								position:'left',
+								align:'middle',
+								distance: '4px',
+								alwaysVisible:true,
+								tableStyle:{margin:'2px'}
+							  };
+				$('#user_phone_number').CreateBubblePopup(options2);
+				
+				
+
+			}
+-->
+</script>
+</head>
+
+<div id="bottomPanel" class="panel">
+        <p class="floatRight">
+		  <a onclick="window.open(this.href,'popup','width=950,height=600,scrollbars=yes');return false;" href="<?php echo $this->url(array('lang'=>$translate->getLocale(),'controller'=>'credits','action'=>'coverage'),'default', null, true);?>"><?php print $translate->_("checkCoverage"); ?></a>
+		</p>
+									  
+		<form name="productform" id="productform" method="post"
+			  action="<?php echo $this->url(array('lang'=>$translate->getLocale(),
+									  'controller'=>'credits',
+									  'action'=>'selection'), null, true);?>"
+			  enctype="application/x-www-form-urlencoded">
+			  
+		 <div class="row">
+			 <h2><?php print $translate->_("choose_credits"); ?></h2>
+			 <p><?php print $translate->_("selection_desc1"); ?> </p>	  
+		 </div>
+		 <div class="topRow selection">
+		         <h3><?php print $translate->_("Were to sent your messages"); ?></h3> 
+		     	 <h4><?php print $translate->_("groups"); ?></h4>
+			 <select class="comboBox" name="payment[group]" onchange="submit();" id="group">
+				   <?php foreach($this->groupList as $i=>$value) : ?>
+		  
+						<option value="<?php echo $i?>"
+						   <?php if($this->groupSelected==$i) echo "selected";?>>
+						  
+						   <?php echo $this->groupList[$i];?>
+					   </option>
+
+				   <?php endforeach; ?>
+				  </select>
+		 </div>
+		  <div class="topRow selection">
+			 <h3><?php print $translate->_("selection_title2"); ?></h3>
+			 <h4><?php print $translate->_("mobile_number"); ?></h4>
+			 <input class="inputText" type="text" size="13" name="payment[phone_number]" id="user_phone_number"
+				value="<?php echo $this->phoneNumber; ?>" /> <span class="n2_color_text details_text"><?php print $translate->_("mobile_number_desc"); ?> </span>
+				<?php if($this->errorPhoneMessage!=null){ ?><p><span class="error_text"> <?php echo $translate->_($this->errorPhoneMessage); ?> </span></p><?php }?>
+				
+			
+            <h4><?php print $translate->_("country"); ?></h4>
+			<select class="comboBox" name="payment[country_id]" id="user_country_id" onchange="submit();">
+			<?php foreach($this->countryList as $country) : ?>
+			  
+				<option value="<?php echo $country->getId();?>"
+						   <?php if($this->countryId==$country->getId()) echo "selected";?>>
+					<?php echo $country->getName()." (".$country->getCountryCode().")";?>
+				</option>
+
+			<?php endforeach; ?>
+			</select>
+			<span class="n2_color_text details_text"><?php print $translate->_("country_desc"); ?></span>
+			
+		 </div>
+		 
+		<div class="column selection">
+		    <?php /*If boca a boca promo*/if ($this->promoId!=Constants::PROMO_EXISTING_USER){?>
+		
+			   <?php /*If no promo*/if ($this->promoId==Constants::PROMO_NOTHING){?> <h3><span class="promoHeader"><?php print $translate->_("selection_title4"); ?></span></h3><?php } ?>
+		   <?php /*If boca a boca promo*/if ($this->promoId==Constants::PROMO_BOCA_A_BOCA){?><h3><span class="promoHeader"><?php print $translate->_("selection_title4_promo"); ?></span></h3><?php } ?>
+			 <h4><?php print $translate->_("promo_code"); ?></h4>
+			 <?php if($this->promoId==Constants::PROMO_BOCA_A_BOCA) {?>
+				<div id="promoCode">
+					<span id="promoCodeText"><?php print $this->promoCode; ?></span>
+					<input type="hidden" name="payment[promo_code]" id="user_promo_code" value="<?php print $this->promoCode; ?>" />
+                  </div>
+				 <br/><p><span class="n2_color_text details_text"><?php print $translate->_("promo_code_ok"); ?> </span></p>
+			 <?php }else{?>
+					<input class="inputText" type="text" size="13" name="payment[promo_code]" id="user_promo_code" onClick="this.value=''"
+					value="<?php print $translate->_("your_code_here"); ?>" />
+				    
+					<input class="button button-inline" name="validate_promo" type="submit" value="<?php print $translate->_("validate_button"); ?>"/>
+					<?php if($this->errorCodeMessage!=null){ ?><span class="error_text"> <?php echo $translate->_($this->errorCodeMessage); ?> </span><?php }?>
+					<p><span class="n2_color_text details_text"><?php print $translate->_("promo_code_desc"); ?> </span></p>
+				<?php } ?>
+				
+			     <div id="userPromoInfo">
+				     <span class="n2_color_promo_text details_text"><?php print $translate->_("promo_info"); ?> 
+					 <a onclick="window.open(this.href,'popup','width=950,height=600,scrollbars=yes');return false;" href="<?php echo $this->url(array('lang'=>$translate->getLocale(),'controller'=>'promosms','action'=>'details'),'default', null, true);?>"><?php print $translate->_("promo_details1"); ?></a>
+					 </span>
+
+							
+				 </div>
+				 
+			     
+			 
+			 <?php }else{//If existingUserPromo?>
+                              <h3><?php print $translate->_("selection_title5"); ?></h3>
+			      <h4><?php print $translate->_("show_promo_code"); ?></h4>
+                               <div id="promoCode">
+				  <span id="promoCodeText"><?php print $this->userPromoCode; ?></span>
+                               </div>
+				 <span class="n2_color_text details_text_right"><?php print $translate->_("show_promo_code_desc"); ?></span>
+			      
+                 
+						<table width="90%" cellspacing="0" cellpadding="0" border="0">
+						 <tr>
+							  <td class="feature-image"><img width="42" height="42" alt="" src="<?php echo $this->baseUrl()."/"?>images/n2managerAppLogo.png"/></td>
+							  <td class="feature-description">
+							  <p><b><?php print $translate->_("android_friends_link"); ?></b><br/>
+							     <a class="more" href="<?php echo $this->promoURL;?>" ><?php print $this->host.$this->promoURL;?></a>
+								</p>
+							  </td>
+						  </tr>
+						  <tr>  
+						       <td></td>
+							   <td>
+							   <div id="socialLinks">
+							   <ul>
+							       <li>
+							         <a href="http://twitter.com/share" class="twitter-share-button" data-url="<?php echo $this->host.$this->promoURL;?>" data-via="n2manager" data-text="sms promotion code" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script> 
+								   </li>
+								   <li>
+							         <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="<?php echo $this->host.$this->promoURL;?>" layout="button_count" show_faces="true" action="recommend"></fb:like>
+							       </li>
+								 </ul>
+								 </div>
+							   </td>
+						  </tr>
+						  
+						  <tr>  
+							  <td colspan="2">
+								  <p class="center_text">
+								  <span class="n2_color_text details_text"><a onclick="window.open(this.href,'popup','width=950,height=600,scrollbars=yes');return false;" href="<?php echo $this->url(array('lang'=>$translate->getLocale(),'controller'=>'promosms','action'=>'details'),'default', null, true);?>"><?php print $translate->_("promo_details1"); ?></a>
+								  </span>
+								  </p>
+							  </td>
+						  </tr>
+						  			  
+						</table>
+						
+				
+								 
+
+			 <?php }?>
+
+		</div>
+
+		<div class="lastColumn selection">
+           <?php /*If boca a boca promo*/if ($this->promoId==Constants::PROMO_NOTHING){?> 
+		   <h3><span class="promoHeader"><?php print $translate->_("selection_title1"); ?></span></h3>
+		  <?php } ?>
+		  <?php /*If boca a boca promo*/if ($this->promoId==Constants::PROMO_BOCA_A_BOCA){?> 
+		   <h3><span class="promoHeader"><?php print $translate->_("selection_title_promo"); ?></span></h3>
+		  <?php } ?>
+		  <?php /*If boca a boca promo*/if ($this->promoId==Constants::PROMO_EXISTING_USER){?> 
+		   <h3><span class="promoHeader"><?php print $translate->_("selection_title_existing"); ?></span></h3>
+		  <?php } ?>
+				  
+		   <h4><?php print $translate->_("currency"); ?></h4>
+			 <select class="comboBox" name="payment[currency]" onchange="submit();" id="currency">
+				   <?php foreach($this->currencyList as $currency) : ?>
+		  
+						<option value="<?php echo $currency->getCode();?>"
+						   <?php if($this->userCurrency->getCode()==$currency->getCode()) echo "selected";?>>
+						  
+						   <?php echo $currency->getName()." (".$currency->getCode().")";?>
+					   </option>
+
+				   <?php endforeach; ?>
+				  </select>
+			
+			
+			<div class="radio">
+			<h4><?php print $translate->_("credits"); ?></h4>
+
+			<?php $first=TRUE; foreach($this->productList as $product) : ?>
+				 <p>
+				  <input type="radio" value="<?php echo $product->getId(); ?>" name="payment[product]"
+				  <?php if($first==TRUE) echo "checked";$first=FALSE; ?>>
+				  &nbsp;<b><?php echo $product->getPriceAndSymbol(); ?></b></span>
+				  <span>
+				  <?php $price= $product->getPriceSms();
+						print $translate->_($product->getName())." (<b>".$price."</b> ";
+				  if($this->userCurrency->getCode()=="GBP") print $translate->_("pence");
+				  elseif($this->userCurrency->getCode()=="JPY") print $translate->_("yen");
+				  elseif($this->userCurrency->getCode()=="CHF") print $translate->_("centimes");
+				  else print $translate->_("cents");
+				  
+				  ?>  
+				  <?php print $translate->_("by_sms"); ?>
+				  </span>
+				</p>
+			<?php endforeach; ?>
+	
+			</div>
+			
+		</div>
+
+		<div class="row">
+
+			 <p><input type="checkbox" value="1" name="payment[confirm_phone]"/> <?php print $translate->_("confirm_phone_desc"); ?></p>	  
+			 <?php if($this->errorConfirmPhoneMessage!=null){ ?><p><span class="error_text"> <?php echo $translate->_($this->errorConfirmPhoneMessage); ?> </span></p><?php }?>
+			 
+			 <p><input type="checkbox" value="1" name="payment[readed_condicions]"/> <?php print $translate->_("confirm_terms_desc"); ?>  <a onclick="window.open(this.href,'popup','width=950,height=600,scrollbars=yes');return false;" 
+			 href="<?php echo $this->url(array('lang'=>$translate->getLocale(),
+									  'controller'=>'credits',
+									  'action'=>'terms'), null, true);?>"><?php print $translate->_("confirm_terms_desc2"); ?></a></p>
+			<?php if($this->errorReadedConditionsMessage!=null){ ?><p><span class="error_text"> <?php echo $translate->_($this->errorReadedConditionsMessage); ?> </span></p><?php }?>
+									  
+		 <input class="button" name="next" type="submit" value="<?php print $translate->_("next_button"); ?>"/>
+		 </div>
+		 
+		</form>
+
+</div>

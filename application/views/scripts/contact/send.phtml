@@ -1,0 +1,29 @@
+<?php $translate=Zend_Registry::get('Zend_Translate'); ?>
+<?php
+
+$this->headTitle($translate->_("n2manager_title"));
+$this->headTitle($translate->_("contact_header1"));
+$this->headTitle()->setSeparator(' | ');
+?>
+<div id="bottomPanel" class="panel">
+<div class="row">	
+	
+	<?php if ($this->mailSend==TRUE){ ?>
+	<h2><?php print $translate->_("mailSend_title1"); ?></h2>
+	<h3><?php print $translate->_("mailSend_details1"); ?></h3>
+	 <p><?php print $translate->_("mailSend_details2"); ?></p>
+	 
+	 <p>
+	  <?php print $translate->_("mailSend_thanks"); ?>
+	 </p>
+	 
+			  
+	<? } else { ?>
+		<h2><?php print $translate->_("mailSendError_title1"); ?></h2>
+		<h3><?php print $translate->_("mailSendError_details1"); ?></h3>
+		 <p><?php print $translate->_("mailSendError_details2"); ?></p>
+	<?php }?>
+</div>
+	
+
+</div>

@@ -1,0 +1,345 @@
+/*.in, .out {
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 950ms;
+}
+*/
+.ui-bar-a{
+background:#393c39;
+}
+#mainBar .ui-btn{
+background:#393c39;
+border-left: 1px solid #948d8b;
+}
+#mainBar .ui-btn-active{
+background:#242523;
+
+}
+#mainBar .ui-btn-hover{
+background:#EC9E22;
+}
+#logo {
+    color: #000000;
+}
+
+header nav li a {
+    background-position: left top;
+    border: 0 solid #FFFFFF;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+	text-align: center;
+}
+/*header nav .ui-btn-up-a{
+background:#186d6e;
+}*/
+
+/****** MenuBar *******/
+#menuBar {
+			/*border-bottom: solid 2px black;*/
+			font-size: 0.8em;
+			/*background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0.31, rgb(122,121,121)), color-stop(0.66, rgb(79,77,77)), color-stop(0.83, rgb(56,54,56)) );*/
+		    /*background:#186d6e;*/
+		    font-family: Helvetica, Arial, sans-serif /*{global-font-family}*/;
+		    border: 1px solid 		#2A2A2A /*{a-bar-border}*/;
+			/*background: 			#111111 /*{a-bar-background-color}*/;
+			color: 					#ffffff /*{a-bar-color}*/;
+			font-weight: bold;
+			text-shadow: 0 /*{a-bar-shadow-x}*/ -1px /*{a-bar-shadow-y}*/ 1px /*{a-bar-shadow-radius}*/ #000000 /*{a-bar-shadow-color}*/;
+			background-image: -webkit-gradient(linear, left top, left bottom, from( #555 /*{a-bar-background-start}*/), to( #333 /*{a-bar-background-end}*/)); /* Saf4+, Chrome */
+			background-image: -webkit-linear-gradient(#555 /*{a-bar-background-start}*/, #333 /*{a-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+			background-image:    -moz-linear-gradient(#555 /*{a-bar-background-start}*/, #333 /*{a-bar-background-end}*/); /* FF3.6 */
+			background-image:     -ms-linear-gradient(#555 /*{a-bar-background-start}*/, #333 /*{a-bar-background-end}*/); /* IE10 */
+			background-image:      -o-linear-gradient(#555 /*{a-bar-background-start}*/, #333 /*{a-bar-background-end}*/); /* Opera 11.10+ */
+			background-image:         linear-gradient(#555 /*{a-bar-background-start}*/, #333 /*{a-bar-background-end}*/);
+		}
+/* Use list elements to define and organize 'buttons' that the user can interact with from the menuBar */
+
+#menuBarList { 
+    list-style:none;
+}
+		
+#menuBar ul li { 
+			background-color: #96999e;
+			border-radius: 0.5em;
+			cursor: pointer; 
+			/*text-shadow: rgb(122,121,121) 3px 3px 3px;*/
+			text-align: center;
+			width:80px;
+			
+			background-image: -webkit-gradient(linear, left top, left bottom, from( #B6ACAC /*{a-bar-background-start}*/), to( #7D7676 /*{a-bar-background-end}*/)); /* Saf4+, Chrome */
+			background-image: -webkit-linear-gradient(#B6ACAC /*{a-bar-background-start}*/, #7D7676 /*{a-bar-background-end}*/); /* Chrome 10+, Saf5.1+ */
+			background-image:    -moz-linear-gradient(#B6ACAC /*{a-bar-background-start}*/, #7D7676 /*{a-bar-background-end}*/); /* FF3.6 */
+			background-image:     -ms-linear-gradient(#B6ACAC /*{a-bar-background-start}*/, #7D7676 /*{a-bar-background-end}*/); /* IE10 */
+			background-image:      -o-linear-gradient(#B6ACAC /*{a-bar-background-start}*/, #7D7676 /*{a-bar-background-end}*/); /* Opera 11.10+ */
+			background-image:         linear-gradient(#B6ACAC /*{a-bar-background-start}*/, #7D7676 /*{a-bar-background-end}*/);
+}
+
+#menuBar ul li:hover {
+	background-color: #fff;
+}
+
+#menuBar #menuLogout li {
+	width: auto;
+	min-width: 100px;
+}
+
+.phoneType{
+color:grey;
+}
+
+.contactName{
+color:#000000;
+font-size:20px;
+}
+
+/*.content .ui-block-a{
+border-right: 2px solid;
+border-color:#000000;
+}
+*/
+/***** ui-block-a ContactList *******/
+.ui-bar-b {
+	border: 1px solid 		#7D7676 /*{a-bup-border}*/;
+	background: 			#B6ACAC /*{a-bup-background-color}*/;
+	font-weight: bold;
+	color: 					#fff /*{a-bup-color}*/;
+	text-shadow: 0 /*{a-bup-shadow-x}*/ -1px /*{a-bup-shadow-y}*/ 1px /*{a-bup-shadow-radius}*/ #000 /*{a-bup-shadow-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from( #B6ACAC /*{a-bup-background-start}*/), to( #7D7676 /*{a-bup-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(#B6ACAC /*{a-bup-background-start}*/, #7D7676 /*{a-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(#B6ACAC /*{a-bup-background-start}*/, #7D7676 /*{a-bup-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient(#B6ACAC /*{a-bup-background-start}*/, #7D7676 /*{a-bup-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient(#B6ACAC /*{a-bup-background-start}*/, #7D7676 /*{a-bup-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient(#B6ACAC /*{a-bup-background-start}*/, #7D7676 /*{a-bup-background-end}*/);
+}
+
+/******* Notifications System ********/
+.ui-body-suc {
+   border: 1px solid       #459216;
+   color:               #333333;
+   text-shadow: 0 1px 0    #fff;
+   background:          #75c443;
+   background-image: -webkit-gradient(linear, left top, left bottom, from( #fff /*{a-bup-background-start}*/), to( #75c443 /*{a-bup-background-end}*/)); /* Saf4+, Chrome */
+   background-image: -webkit-linear-gradient(#fff /*{a-bup-background-start}*/, #75c443 /*{a-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+   background-image:    -moz-linear-gradient(#fff /*{a-bup-background-start}*/, #75c443 /*{a-bup-background-end}*/); /* FF3.6 */
+   background-image:     -ms-linear-gradient(#fff /*{a-bup-background-start}*/, #75c443 /*{a-bup-background-end}*/); /* IE10 */
+   background-image:      -o-linear-gradient(#fff /*{a-bup-background-start}*/, #75c443 /*{a-bup-background-end}*/); /* Opera 11.10+ */
+   background-image:         linear-gradient(#fff /*{a-bup-background-start}*/, #75c443 /*{a-bup-background-end}*/);
+  
+}
+.ui-body-err {
+   border: 1px solid       #6c2527 ;
+   color:               #fff;
+   text-shadow: 0 0px 0    #000;
+   background:          #bf3639;
+   background-image: -webkit-gradient(linear, left top, left bottom, from( #d78485 /*{a-bup-background-start}*/), to( #bf3639 /*{a-bup-background-end}*/)); /* Saf4+, Chrome */
+   background-image: -webkit-linear-gradient(#d78485 /*{a-bup-background-start}*/, #bf3639 /*{a-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+   background-image:    -moz-linear-gradient(#d78485 /*{a-bup-background-start}*/, #bf3639 /*{a-bup-background-end}*/); /* FF3.6 */
+   background-image:     -ms-linear-gradient(#d78485 /*{a-bup-background-start}*/, #bf3639 /*{a-bup-background-end}*/); /* IE10 */
+   background-image:      -o-linear-gradient(#d78485 /*{a-bup-background-start}*/, #bf3639 /*{a-bup-background-end}*/); /* Opera 11.10+ */
+   background-image:         linear-gradient(#d78485 /*{a-bup-background-start}*/, #bf3639 /*{a-bup-background-end}*/);
+  
+}
+.ui-body-info {
+   border: 1px solid       #235596;
+   color:               #333333;
+   text-shadow: 0 1px 0    #fff;
+   background:          #559ed3;
+   background:          #bf3639;
+   background-image: -webkit-gradient(linear, left top, left bottom, from( #fff /*{a-bup-background-start}*/), to( #559ed3 /*{a-bup-background-end}*/)); /* Saf4+, Chrome */
+   background-image: -webkit-linear-gradient(#fff /*{a-bup-background-start}*/, #559ed3 /*{a-bup-background-end}*/); /* Chrome 10+, Saf5.1+ */
+   background-image:    -moz-linear-gradient(#fff /*{a-bup-background-start}*/, #559ed3 /*{a-bup-background-end}*/); /* FF3.6 */
+   background-image:     -ms-linear-gradient(#fff /*{a-bup-background-start}*/, #559ed3 /*{a-bup-background-end}*/); /* IE10 */
+   background-image:      -o-linear-gradient(#fff /*{a-bup-background-start}*/, #559ed3 /*{a-bup-background-end}*/); /* Opera 11.10+ */
+   background-image:         linear-gradient(#fff /*{a-bup-background-start}*/, #559ed3 /*{a-bup-background-end}*/);
+
+}
+
+
+/*****Footer ActionBar ****/
+
+#contactsActionBar .ui-btn-text{
+	font-size:16px;
+}
+#contactsActionBar li{
+	height:80px;
+}
+#contactsActionBar li a{
+	height:100%;
+}
+#contactsActionBar li a .ui-btn-inner{
+	padding-top:37px;
+}
+#contactsActionBar li a .ui-btn-inner .ui-icon{
+	top:10px;
+}
+
+#reports p{font-size:16px;}
+
+#sendBar .ui-grid-b .ui-block-a{
+	width:24%;
+}
+
+#sendBar .ui-grid-a .ui-block-a{
+   width:75%;
+   margin-left:3px;
+   margin-right:3px;
+}
+#sendBar .ui-grid-a .ui-block-b{
+   width:24%;
+   margin-left:0px;
+   margin-right:3px;
+}
+
+#sendBar .ui-grid-b .ui-block-c{
+	width:20%;
+	font-size:16px;
+	
+
+}
+#sendBar .ui-btn-text{
+font-size:16px;
+}
+#sendBar li #sendMode{
+color:white;
+background:red;
+-webkit-border-radius:0.5em;
+-moz-border-radius:0.5em;
+border-radius: 0.5em;
+text-shadow: 0 0px 0px white;
+margin-left:3px;
+border: 2px solid #fff;
+height:36px;
+}
+
+#sendBar li #submitSendMessage{
+ 
+}
+#selectedModeText{
+color:white;
+font-size:20px;
+
+}
+
+/* ============================================================================================================================
+== BUBBLE WITH A BORDER AND TRIANGLE
+** ============================================================================================================================ */
+
+/* THE SPEECH BUBBLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-border {
+	position:relative;
+	padding:7px;
+	margin:1em 0 1em;
+	color:#333;
+	/* css3 */
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-border:before {
+	content:"";
+	position:absolute;
+	bottom:-20px; /* value = - border-top-width - border-bottom-width */
+	left:40px; /* controls horizontal position */
+    border-width:20px 20px 0;
+	border-style:solid;
+    border-color:#a7cab2 transparent;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;
+}
+
+/* creates the smaller  triangle */
+.triangle-border:after {
+	content:"";
+	position:absolute;
+	bottom:-13px; /* value = - border-top-width - border-bottom-width */
+	left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+	border-width:13px 13px 0;
+	border-style:solid;
+	border-color:#fff transparent;
+    /* reduce the damage in FF3.0 */
+    display:block; 
+    width:0;
+}
+
+/* Variant : top
+------------------------------------------ */
+
+/* creates the larger triangle */
+.triangle-border.top:before {
+	top:-20px; /* value = - border-top-width - border-bottom-width */
+	bottom:auto;
+	left:auto;
+	right:40px; /* controls horizontal position */
+    border-width:0 20px 20px;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.top:after {
+	top:-13px; /* value = - border-top-width - border-bottom-width */
+	bottom:auto;
+	left:auto;
+	right:47px; /* value = (:before right) + (:before border-right) - (:after border-right) */
+    border-width:0 13px 13px;
+}
+
+/* Variant : left
+------------------------------------------ */
+.triangle-border.left {
+	margin-right:30px;
+	border: 2px solid #dbd9dc;
+	background:#fff;
+	margin-left: 10px;
+}
+/* creates the larger triangle */
+.triangle-border.left:before {
+	top:2px; /* controls vertical position */
+	bottom:auto;
+	left:-23px; /* value = - border-left-width - border-right-width */
+	border-width:7px 22px 7px 0;
+	border-color:transparent #dbd9dc;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.left:after {
+	top:4px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+	bottom:auto;
+	left:-15px; /* value = - border-left-width - border-right-width */
+	border-width:5px 15px 5px 0;
+	border-color:transparent #ffffff;
+}
+/* Variant : right
+------------------------------------------ */
+.triangle-border.right {
+	margin-left:30px;
+	border: 2px solid #626162;
+	background:#ecfee6;
+	margin-right: 30px;
+}
+
+
+/* creates the larger triangle */
+.triangle-border.right:before {
+	top:3px; /* controls vertical position */
+	bottom:auto;
+    left:auto;
+	right:-23px; /* value = - border-left-width - border-right-width */
+	border-width:7px 0 7px 22px;
+	border-color:transparent #626162;
+}
+
+/* creates the smaller  triangle */
+.triangle-border.right:after {
+	top:3px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+	bottom:auto;
+    left:auto;
+	right:-15px; /* value = - border-left-width - border-right-width */
+	border-width:7px 0 7px 15px;
+	border-color:transparent #ECFEE6;
+}

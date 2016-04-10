@@ -1,0 +1,61 @@
+<?php $translate=Zend_Registry::get('Zend_Translate'); ?>
+<?php
+
+$this->headTitle($translate->_("n2manager_title"));
+$this->headTitle($translate->_("contact_header1"));
+$this->headTitle()->setSeparator(' | ');
+?>
+<div id="bottomPanel" class="panel">
+
+		<form name="productform" id="productform" method="post"
+			  action="<?php echo $this->url(array('lang'=>$translate->getLocale(),
+									  'controller'=>'contact',
+									  'action'=>'form'), null, true);?>"
+			  enctype="application/x-www-form-urlencoded">
+			  
+		 <div class="row">
+			 <h2><?php print $translate->_("contact_header1"); ?></h2>
+			 <p><?php print $translate->_("contact_details"); ?></p>	  
+		 </div>
+		 
+		<div class="column selection">
+		   <h3><?php print $translate->_("contact_header2"); ?></h3>
+		  
+		   <h4><?php print $translate->_("contact_name"); ?></h4>
+			<input class="inputText" type="text" size="13" name="contact[name]" id="user_name"
+				value="<?php echo $this->name; ?>" /> <?php if($this->errorName!=null){ ?><span class="error_text"> <?php echo $translate->_($this->errorName); ?> </span><?php }?>
+		   
+		   <h4><?php print $translate->_("contact_mail"); ?></h4> 
+			<input class="inputText" type="text" size="13" name="contact[mail]" id="user_mail"
+				value="<?php echo $this->mail; ?>" /> <?php if($this->errorMail!=null){ ?><span class="error_text"> <?php echo $translate->_($this->errorMail); ?> </span><?php }?>
+			
+			<h4><?php print $translate->_("country"); ?></h4>
+			<select class="comboBox" name="contact[country]" id="user_country_id">
+			<?php foreach($this->countryList as $country) : ?>
+			  
+				<option value="<?php echo $country->getName();?>"
+						   <?php if($this->country==$country->getName()) echo "selected";?>>
+					<?php echo $country->getName();?>
+				</option>
+
+			<?php endforeach; ?>
+			</select>
+			
+		
+
+		</div>
+
+		<div class="lastColumn selection">
+
+			<h3><?php print $translate->_("contact_header3"); ?></h3>
+			<h4><?php print $translate->_("contact_content"); ?></h4><?php if($this->errorEmptyMessage!=null){ ?><span class="error_text"> <?php echo $translate->_($this->errorEmptyMessage); ?> </span><?php }?>	
+			 <textarea class="inputTextArea" name="contact[message]" id="user_message"><?php echo $this->message; ?></textarea>
+			 		 
+	        <input class="button" name="send" type="submit" value="<?php print $translate->_("send_button"); ?>"/>
+			
+		</div>
+		 
+		 
+		</form>
+
+</div>

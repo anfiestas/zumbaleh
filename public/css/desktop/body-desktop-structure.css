@@ -1,0 +1,575 @@
+header .ui-navbar {
+	float: right;
+	position: relative;
+	height: 65px;
+}
+
+.floatRight {
+	position: relative;
+	float: right;
+}
+
+#logo {
+	display: block;
+	float: left;
+	height: 43px;
+	left: 0;
+	margin-left: 30px;
+	position: relative;
+	z-index: 9;
+	margin-right: 12px;
+	padding-bottom: 12px;
+	padding-right: 12px;
+	padding-top: 0px;
+}
+
+#userBarCredits {
+	float: left;
+	position: absolute;
+	margin-top: 24px;
+	margin-left: 180px;
+}
+
+.ui-header {
+	height: 60px;
+}
+
+#login-register .ui-header {
+	height: 38px !important;
+}
+/*.ui-header .ui-title{
+margin-top:40px;
+text-align:center;
+margin-right:0px;
+margin-left:0px;
+
+//comment this
+text-align:center;
+margin-left:0px;
+margin-right:0px;
+width:100%;
+
+}*/
+#backButton {
+	width: 156px;
+	margin-top: 12px;
+}
+
+header nav li a {
+	background-position: left top;
+	display: block;
+	float: left;
+	height: 65px;
+	margin-left: 0;
+	margin-top: 0;
+	padding-bottom: 0;
+	padding-top: 7px;
+	width: 80px;
+}
+
+#loginBar {
+	width: 60%;
+	margin-top: 1%;
+}
+
+#loginBar li {
+	margin-right: 10px;
+	width: 30%;
+}
+
+#conversations .content .ui-block-b {
+	/*width:308px;*/
+	width: 37%;
+	height: 100%;
+	border-right: 1px solid;
+	overflow-y: auto;
+}
+
+.ui-block-b {
+	width: 308px;
+	height: 100%;
+	border-right: 1px solid;
+	border-left: 1px solid;
+}
+
+#conversations .ui-block-c {
+	/*width:45%;*/
+	width: 62.4%;
+	height: 100%;
+	border-right: 1px solid;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-top: 0px;
+}
+
+#loginBar .ui-block-c {
+	border-right: 0px solid;
+}
+
+/*TODO: 
+.content .ui-block-b{
+	 overflow-y: auto;
+	 overflow-x: hidden;
+}*/
+.ui-listview-filter {
+	border-width: 0;
+	overflow: hidden;
+	margin: -4px 0px 0px 0px;
+}
+/******** Contacts *******/
+.ui-block-b .content-bar.ui-bar {
+	border-width: 0;
+	margin: -15px -15px 0px 15px;
+	overflow: hidden;
+	min-height: 91%;
+}
+
+.ui-content .ui-listview {
+	margin: 0px !important;
+}
+
+.ui-li {
+	padding-top: 0px;
+	padding-left: 4px;
+	height: 56px !important;
+}
+
+.ui-li-heading {
+	margin-top: 0px;
+}
+
+#contacts .ui-content .ui-block-a .ui-listview {
+	overflow-y: scroll;
+}
+
+/*Form select*/
+#contacts .ui-field-contain .ui-select {
+	width: 20%;
+	display: inline-block;
+}
+
+/******** Conversations ********/
+#conversations .ui-content .ui-block-a .ui-listview {
+	overflow-y: scroll;
+}
+
+#conversations .ui-content .ui-block-b #chatList {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+#conversations .ui-block-b #chatList {
+	/*border-width: 0;*/
+	margin: -15px -15px 0px 30px;
+	/*overflow: hidden;*/
+}
+
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit,.ui-li-static.ui-li-has-thumb
+	{
+	padding-left: 57px;
+	padding-top: 0px;
+}
+
+#conversations #chatList .ui-li .ui-btn-inner a.ui-link-inherit,#conversations #chatList .ui-li-static.ui-li
+	{
+	padding: 0px 15px 0.3em 15px;
+	display: block;
+	margin-left: 68px;
+}
+
+#conversations #chatList h3 {
+	border-left: 0px;
+}
+
+#chat .ui-input-text {
+	height: 25px;
+	width: 94%;
+}
+/******** Send-sms *******/
+#sms-send .ui-content .ui-block-a .ui-listview {
+	overflow-y: scroll;
+}
+
+#sms-send .ui-block-b .reportsList {
+	/*border-width: 0;*/
+	margin: -15px -15px 0px 30px;
+	/*overflow: hidden;*/
+}
+/******* Conversation Page ********/
+#chatList {
+	height: 75%;
+	border-width: 0;
+	overflow-y: visible;
+	overflow-x: hidden;
+	position: relative;
+	padding-top: 10px;
+}
+
+#sendBarDiv {
+	position: relative;
+	/* 	height:126px; */
+	background: #e7eceb;
+	padding: 0 18px 35px;
+}
+
+#sendBarDiv textarea {
+	height: 65px !important;
+	resize: none;
+}
+
+.ui-content {
+	width: 68%;
+	min-height: 610px !important;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0px !important;
+}
+
+#leftAd {
+	position: absolute;
+	margin-top: 10px;
+	/*margin-left:25px;*/
+}
+
+#rightAd {
+	position: absolute;
+	margin-top: 10px;
+}
+
+#mainBar .ui-grid-a .ui-block-a,.ui-grid-a .ui-block-b {
+	width: auto;
+	border-top: none !important;
+}
+
+#mainBar ul {
+	margin-top: 12px;
+}
+/*********/
+#menuOptions {
+	float: right;
+	position: relative;
+	margin-top: -5px;
+	margin-right: 25px;
+}
+
+#menuOptions li {
+	display: inline;
+	float: left;
+	text-align: center;
+	font-size: 24px;
+	font-family: zumbCalibri, Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-weight: normal;
+	margin-left: 25px;
+}
+
+#menuOptions li#login {
+	font-size: 16px;
+	text-decoration: underline;
+	padding-left: 90px;
+}
+
+#menuOptions li a {
+	color: #FFFFFF;
+	margin-left: 0;
+	margin-top: 0;
+	padding-bottom: 0px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: normal !important;
+	font-size: 15px;
+}
+
+#login-register li a {
+	color: #000000;
+	margin-left: 0;
+	margin-top: 0;
+	padding-bottom: 0px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: normal !important;
+	font-size: 15px;
+	text-shadow:none !important;
+}
+
+#donations .ui-header {
+height: 38px !important;
+}
+
+#credits {
+	font-weight: bold;
+	color: #81c934;
+}
+
+#pin {
+	/*  font-size:11px !important;
+  font-weight:normal;*/
+	
+}
+
+#menuOptions li a:hover {
+	color: #81c934;
+}
+#login-register a:hover {
+	color: #81c934 !important;
+}
+#menuOptions li#active a {
+	position: relative;
+	color: #FFFFFF;
+}
+
+@media ( max-width : 1024px) {
+	.ui-content {
+		width: 100%;
+	}
+	#conversations .ui-block-c {
+		width: 58%;
+	}
+	#conversations .content .ui-block-b {
+		width: 29%;
+	}
+	#leftAd {
+		display: none;
+	}
+	#rightAd {
+		right: 5px;
+		margin-top: 5px;
+	}
+}
+
+.centeredDiv {
+	width: 1200px !important;
+	margin-right: auto !important;
+	margin-left: auto;
+	padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+@media ( min-width : 1600px) {
+	.ui-content {
+		width: 981px;
+		padding: 0px 100px 0px 100px !important;
+	}
+	#chatList {
+		height: 80%;
+	}
+	#conversations .ui-block-c {
+		width: 61.7%;
+	}
+	#leftAd {
+		margin-top: 100px;
+	}
+	#rightAd {
+		margin-top: 100px;
+	}
+	#login-register .ui-content {
+		padding: 0px 0px 0px 0px !important;
+	}
+}
+
+@media ( max-height : 780px) {
+	.ui-header {
+		height: 64px;
+	}
+	#logo {
+		padding-top: 0px;
+	}
+	#menuOptions {
+		margin-top: 0px;
+	}
+}
+
+@media ( max-width : 1200px) {
+	#login-register .content .ui-block-a {
+		width: 55% !important;
+	}
+	#login-register .content .ui-block-b {
+		width: 445px !important;
+	}
+	.centeredDiv {
+		width: 100% !important;
+		margin-right: auto !important;
+		margin-left: auto;
+	}
+	#login-register #mainDesc {
+		width: 100%;
+	}
+}
+
+@media ( max-width : 985px) {
+	.colTop {
+		height: 100%;
+	}
+}
+
+@media ( max-width : 1366px) {
+	.descPanel p {
+		font-size: 15px;
+	}
+	#step_1,#step_2,#step_3 {
+		font-size: 15px !important;
+	}
+	#login-register .ui-footer h3 {
+		font-size: 15px !important;
+	}
+	#textHeaderPrincipal1 {
+		font-size: 31px !important;
+	}
+	#totalSpoorers {
+		font-size: 20px !important;
+	}
+	#totalDonations {
+		font-size: 20px !important;
+	}
+	.colTop p {
+		font-size: 17px;
+	}
+}
+/* Login page now is main page of the site*/
+#login-register .ui-content {
+	overflow: visible !important;
+	width: 100% !important;
+	height: auto !important;
+}
+
+#login-register .ui-grid-a .ui-block-a {
+	padding-left: 0px;
+	padding-top: 5px;
+	border-right: 0px;
+	width: 60%;
+}
+
+#login-register #mainDesc {
+	width: 850px;
+	padding-top: 30px;
+}
+
+#login-register #mainDesc p {
+	width: 190px;
+	text-align: center;
+}
+
+#login-register #mainDesc .ui-block-a {
+	padding-left: 0px;
+	padding-top: 5px;
+	border-right: 0px;
+	width: 33.33% !important;
+}
+
+#login-register #mainDesc .ui-block-b {
+	padding-left: 0px;
+	padding-top: 5px;
+	border-right: 0px !important;
+	width: 33.33% !important;
+	border-left: 0px !important;
+	border-right: 0px !important;
+	height: auto !important;
+}
+
+#login-register #mainDesc .ui-block-c {
+	padding-left: 0px;
+	padding-top: 5px;
+	border-right: 0px;
+	width: 33.33% !important;
+}
+
+#login-register .ui-block-a {
+	padding-left: 0px;
+	padding-top: 5px;
+	border-right: 0px;
+	width: 100%;
+}
+
+#login-register .content .ui-block-b {
+	/*width: 50%;*/
+	border-left: 0px;
+	border-right: 0px;
+	background: white;
+	height: 530px;
+	width: 460px;
+}
+
+#login-register .ui-input-text {
+	height: 37px;
+	width: 94%;
+	margin-bottom: 15px;
+	-webkit-border-radius: 2px !important;
+	-moz-border-radius: 2px !important;
+	border-radius: 2px !important;
+	text-shadow: none !important;
+	text-decoration: none !important;
+}
+
+#login-register .ui-btn {
+	width: 50%;
+	height: 50px;
+	display: inline-block;
+}
+
+#passRemember {
+	position: relative;
+	width: 44%;
+	text-align: center;
+	padding-top: 13px;
+	display: inline-block;
+	color: #878e8c;
+	text-shadow: none;
+	text-decoration: none;
+}
+/*****Global*****/
+.ui-block-a {
+	width: 179px;
+	height: 100%;
+	border-right: 1px solid;
+}
+
+.oneCol {
+	width: 100% !important;
+}
+
+.loginForm {
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
+#textHeaderPrincipal1 {
+	/*font-size:60px;*/
+	font-size: 34px;
+	font-family: zumbCalibri, Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	font-weight: normal;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	float: left;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	line-height: 100%;
+	text-align: center;
+	text-shadow: none;
+	text-decoration: none;
+	line-height: 1.40;
+	margin-bottom: 70px;
+}
+
+#mainLogo {
+	width: 396px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
+@media (max-height: 768px) {
+.centeredDiv {
+	width: auto !important;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+}
+	
+}
+*/

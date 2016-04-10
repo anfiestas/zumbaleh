@@ -1,0 +1,18 @@
+<?php $translate=Zend_Registry::get('Zend_Translate');
+      $request=Zend_Registry::get('Zend_Request');
+?>
+
+<div id="menuBar">
+	 <a href="<?php echo $this->url(array('lang'=>$translate->getLocale(),'controller'=>'index','action'=>'index'),'default', null, true);?>"><img alt="" src="<?php echo $this->baseUrl()."/"?>images/zumbaleh!_oficial_trans209.png" /></a>
+	 	<div id="menuOptions">
+		  <ul>
+		<li><a href="<?php print $this->url(array('lang'=>$translate->getLocale(),'controller'=>'description','action'=>'index'),'default', null, true);?>"><?php print $translate->_("zumbaleh_menu_1"); ?><span style="color: #81c934;">!</span> <?php print $translate->_("zumbaleh_menu_is"); ?></a>
+		  		</li>
+		  	<li> <a href="http://play.google.com/store/apps/details?id=com.n2bolsa.zumbaleh"><?php print $translate->_("zumbaleh_menu_download"); ?></a></li>
+		  	<li><?php print $translate->_("zumbaleh_menu_help"); ?></li>
+<li id="login"><a href="http://www.zumbaleh.com/app/zumbaleh.html"><?php print $translate->_("zumbaleh_menu_login"); ?></a></li>
+		  </ul>
+		</div>
+		   
+</div>
+

@@ -1,0 +1,199 @@
+header .ui-navbar{
+float:right;
+position:relative;
+height:65px;
+
+}
+
+.floatRight{
+position:relative;
+float:right;
+}
+
+#logo {
+    display: block;
+    float: left;
+    height: 43px;
+    left: 0;
+    margin-left: 10px;
+    position: relative;
+    z-index: 9;
+    margin-right: 12px;
+    padding-bottom: 12px;
+    padding-right: 12px;
+    padding-top: 12px;
+}
+#userBarCredits {
+    float: left;
+	position:absolute;
+    margin-top: 24px;
+	margin-left:180px;
+}
+.ui-header{
+height:65px;
+}
+/*.ui-header .ui-title{
+margin-top:40px;
+text-align:center;
+margin-right:0px;
+margin-left:0px;
+
+//comment this
+text-align:center;
+margin-left:0px;
+margin-right:0px;
+width:100%;
+
+}*/
+
+#backButton{
+width:156px;
+margin-top: 12px;
+
+}
+header nav li a {
+    background-position: left top;
+    display: block;
+    float: left;
+    height: 65px;
+    margin-left: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 7px;
+    width: 80px;
+}
+/****** MenuBar *******/
+
+		#menuBar {
+			position: fixed; 
+			left:0px; 
+			top:-7em;
+			z-index:1000; 
+			width:100%;
+			padding: 0.25em;
+			clear: both;
+		}
+		
+		/* Use CSS3 transition to produce an animation effect for opening/closing the menuBar from the top bezel */
+		.showMenuBar {
+			-webkit-transition: all 0.5s ease-in-out;
+			-webkit-transform: translate(0, 7em);		
+		}
+		.hideMenuBar {
+			-webkit-transition: all 0.5s ease-in-out;
+			-webkit-transform: translate(0, -7em);
+		}
+		
+		/* Use list elements to define and organize 'buttons' that the user can interact with from the menuBar */
+		#menuBar ul { 
+			margin: 0; 
+			padding:0; 
+		}
+		#menuBar ul li { 
+			float: left; 
+			margin-right: 0.5em; 
+			padding: 0.25em; 
+
+		}
+		
+		/* Position groups of buttons on each side of the menuBar */
+		#menuBarLinks { 
+			float: left; 
+		}
+		#menuBarList { 
+			float: right; 
+		}
+/*********************************/
+#loginBar{
+width:60%;
+margin-top:1%;
+}
+#loginBar li {
+margin-right:10px;
+width:30%;
+}
+#login-register .content .ui-block-a{
+width:60%;
+}
+#login-register .content .ui-block-b{
+width:40%;
+}
+/*****Global*****/
+.ui-block-a{
+width:25%;
+height:100%
+}
+.ui-block-b{
+width:74%;
+height:100%
+
+}
+/*TODO: 
+.content .ui-block-b{
+	 overflow-y: auto;
+	 overflow-x: hidden;
+}*/
+/******** Contacts *******/
+
+.ui-block-b .content-bar.ui-bar {
+border-width: 0;
+margin: -15px -15px 0px 15px;
+overflow: hidden;
+min-height:91%;
+}
+
+.ui-content .ui-listview {
+margin-right: 0;
+}
+#contacts .ui-content .ui-block-a .ui-listview {
+ overflow-y: scroll;
+}
+
+/*Form select*/
+#contacts .ui-field-contain .ui-select {
+width: 20%;
+display: inline-block;
+}
+
+/******** Conversations ********/
+#conversations .ui-content .ui-block-a .ui-listview {
+ overflow-y: scroll;
+}
+#conversations .ui-content .ui-block-b #chatList {
+ overflow-y: scroll;
+ overflow-x: hidden;
+}
+
+#conversations .ui-block-b #chatList {
+/*border-width: 0;*/
+margin: -15px -15px 0px 30px;
+/*overflow: hidden;*/
+}
+.ui-li-has-thumb .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li-has-thumb{
+padding-left:57px;	
+}
+#conversations #chatList .ui-li .ui-btn-inner a.ui-link-inherit,#conversations #chatList .ui-li-static.ui-li {
+padding: 0px 15px 0.3em 15px;
+display:block;
+margin-left:68px;
+}
+#conversations #chatList h3{
+border-left:0px;	
+}
+
+#chat .ui-input-text{
+height:25px;
+width: 94%;
+}
+/******** Send-sms *******/
+#sms-send .ui-content .ui-block-a .ui-listview {
+ overflow-y: scroll;
+}
+
+#sms-send .ui-block-b .reportsList {
+/*border-width: 0;*/
+margin: -15px -15px 0px 30px;
+/*overflow: hidden;*/
+}
+/******* Notifications System ********/
+

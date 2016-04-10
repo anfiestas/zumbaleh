@@ -1,0 +1,3577 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale = 1.0,  user-scalable=no" />
+<link rel="icon" href="favicon.png" type="image/x-icon" />
+<title>Spoora</title>
+<link rel="stylesheet" type="text/css"
+	href="css/jquery.mobile-1.0/jquery.mobile-1.0.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/jquery.mobile-1.0/jquery.mobile.structure-1.0.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/jquery.mobile-1.0/plugins/jquery.mobile.simpledialog.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/desktop/body-desktop.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/desktop/body-desktop-structure.css" />
+<script type="text/JavaScript"
+	src="javascripts/lib/ext/jquery-1.6.4.min.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/ext/jquery.base64.min.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/ext/crypto-sha1-hmac.js"></script>
+<script type="text/JavaScript" src="javascripts/lib/ext/crypto-sha1.js"></script>
+<script type="text/JavaScript" src="javascripts/lib/ext/crypto-md5.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/ext/crypto-sha1-hmac-pbkdf2-blockmodes-aes.js"></script>
+<script type="text/JavaScript" src="javascripts/lib/ext/crypto-min.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/ext/jquery.i18n.properties-min-1.0.9.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/http-authenticator.js"></script>
+<script type="text/JavaScript" src="javascripts/model/MessageIM.js"></script>
+<script type="text/JavaScript" src="javascripts/model/Contact.js"></script>
+<script type="text/JavaScript" src="javascripts/model/User.js"></script>
+<script type="text/JavaScript" src="javascripts/model/GroupMember.js"></script>
+<script type="text/JavaScript" src="javascripts/model/Group.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/helper/ContactsHelper.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/helper/GroupHelper.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/helper/ConversationsHelper.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/helper/ChatHelper.js"></script>
+<script type="text/JavaScript" src="javascripts/lib/globalTools.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/helper/ContactsHelper.js"></script>
+<script type="text/JavaScript" src="javascripts/views/ContactsView.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/views/ConversationsView.js"></script>
+<script type="text/JavaScript" src="javascripts/views/ChatView.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/controllers/InitController.js?20"></script>
+<script type="text/JavaScript"
+	src="javascripts/controllers/OptionsMenuController.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/controllers/UploadMediaController.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/controllers/ContactController.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/controllers/LoginController.js?2"></script>
+<script type="text/JavaScript"
+	src="javascripts/controllers/RegisterController.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/controllers/ConversationsController.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/ext/jquery.mobile-1.0/jquery.mobile-1.0.1.min.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/ext/jquery.mobile-1.0/plugins/jquery.mobile.simpledialog.min.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/ext/flip-counter/jquery.flipCounter.1.2.pack.js"></script>
+<script type="text/JavaScript"
+	src="javascripts/lib/ext/jquery.easing.1.3.js"></script>
+	
+
+</head>
+<body>
+
+	<!----------------- begin MAIN Login page ------------------------>
+	<section id="login-register" data-role="page" data-scroll="false">
+	<!--header data-role="header"  data-id="toolbarMenu"  data-role="header" data-position="fixed" data-fullscreen="true"--> 
+
+	<header data-role="header"  data-id="toolbarMenu"  data-role="header"> 
+
+
+	<div id="menuOptions">
+		<ul>
+			<li><a class="scrollTo what_is" href="#what_is"> Que es spoora? </a></li>
+			<li><a href="#donations" data-transition="" class="donations_history">Histórico donaciones</a></li>
+			<li><a href="#faq" data-transition="">FAQ</a></li>
+			<li><a rel="external" href="https://www.myspoora.com/blog">Blog</a></li>
+			<!--li><a href="">FAQ</a></li-->
+			<li><a class="contact" href="mailto:contact@myspoora.com?subject=support">Contact us</a></li>
+			<li><a href="https://www.facebook.com/pages/Spoora/1402782556647772">Facebook</a></li>
+
+		</ul>
+	</div>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-49063868-1', 'myspoora.com');
+	  ga('send', 'pageview');
+
+	</script>
+
+	</header>
+	<div class="content" data-role="content">
+		<div class="ui-grid-a colTop">
+			<div class="centeredDiv">
+				<div class="ui-block-a">
+					<div id="mainLogo">
+						<img src="images/icono_web_little.png" alt="" />
+					</div>
+					<div id="textHeaderPrincipal1">
+						Welcome <br />to the <span style="color: #81c934;">solidarity</span><br />
+						instant messaging
+					</div>
+
+					<div style="margin-left: auto; margin-right: auto; width: 600px; margin-bottom:50px">
+						<div
+							style="font-size: 24px; color: white; text-align: center; width: 40%; float: left;">
+							<span id="totalSpoorers">Total de spoorers</span><br />
+							<div id="counterSpoorers">
+								<input type="hidden" name="counter-value" value="112" />
+							</div>
+						</div>
+						<div style="font-size: 24px; color: white; text-align: center;">
+							<a href="#donations"
+								style="text-decoration: none; color: white; font-weight:normal!important;"><span
+								id="totalDonations" style="text-decoration: none;">Total
+									dinero donado</span></a><br /> <a href="#donations"
+								style="text-decoration: none; color: white;"><div
+									id="counterDonations" style="font-size: 35px;">
+									<input type="hidden" name="counter-value" value="57.60" />&euro;
+								</div></a>
+						</div>
+
+					</div>
+					
+					<div style="margin-right: auto; width: 600px;">
+						<div style="color: white; margin-right:15px;float: left;font-size:13px;margin-top: 8px;width:105px;text-align:center;"><span id="spoora_works_with">spoora colabora con:</span></div>
+						<div style="color: white;width:151px;float: left;margin-right:15px;">
+							<a href="https://www.sonrisasdebombay.org"><img src="images/logo_sonrisas.png" alt="Sonrisas de Bombay" /></a>
+							
+						</div>
+						<div style="color: white; float: left;">
+							<a href="http://www.anesvad.org/"
+								style="text-decoration: none; color: white; font-weight:normal!important;">
+								<img src="images/logo_anesvad.png" alt="Anesvad" /></a>
+						</div>
+
+						<div style="margin-top:30px;float: left;"><a style="color: white; text-decoration: none !important; font-size:12px;font-weight: normal;" href="mailto:contact@myspoora.com?subject=Get involved!"><span id="work_with_us_contact">If you are an NGO or fundation and want to work with us</span></a></div>
+
+					</div>
+
+				</div>
+
+				<div class="ui-block-b">
+					<div class="loginForm" data-role="field-contain">
+						<fieldset class="ui-hide-label">
+							<p id="login_header">
+								Start sesion in <span style="color: #81c934;">mySpoora</span>
+							</p>
+
+							<label for="login_name">Enter your login</label> <input
+								type="text" name="login_name" id="login_name"
+								placeholder="Enter your PIN or phone number" /> <label
+								for="login_pass">Password</label> <input type="password"
+								name="login_pass" id="login_pass" placeholder="Password" />
+							<div style="clear: both; margin-bottom: 15px;">
+								<input type="checkbox" name="keep_me_logged" id="keep_me_logged"
+									data-role="none" /> <span id="keep_me_logged_label"
+									for="keep_me_logged" data-role="none">Keep me logged in</span>
+							</div>
+							<button type="button" name="submit" id="submitLogin">Login</button>
+							<span id="passRemember">Don't remember your PIN or
+								PASSWORD?</span>
+							<div
+								style="text-align: center; font-size: 20px; font-weight: bold; text-shadow: none;">
+								<p id="dontHave" style="">Don't you have an Spoora account
+									yet?</p>
+
+								<p style="margin-top: 20px">
+									<a id="login_get_one"
+										style="color: #81c934; text-decoration: none;" id="getOne"
+										href="https://play.google.com/store/apps/details?id=com.spoora"
+										target="_blank">Get yours for FREE!</a>
+								</p>
+							</div>
+							<div style="width: 152px; margin-left: auto; margin-right: auto;">
+								<a
+									href="https://play.google.com/store/apps/details?id=com.spoora"
+									target="_blank"><img src="images/googleplay.png" alt="" /></a>
+							</div>
+							<div
+								style="text-align: center; font-size: 14px; margin-top: 15px;">
+
+								<div style="padding-top: 7px;">
+									<a href="https://twitter.com/myspoora" target="_blank"><img
+										src="images/twitter_small.png" alt="" /></a> <a
+										href="https://www.facebook.com/pages/Spoora/1402782556647772"
+										target="_blank"><img src="images/facebook_small.png"
+										alt="" /></a>
+								</div>
+							</div>
+
+						</fieldset>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="ui-grid-b descPanel">
+			<div class="centeredDiv" style="margin-top: -10px;">
+				<div class="ui-block-a" style="text-align: center";>
+					<div class="centeredDiv"
+						style="width: 850px !important; margin-bottom: 30px;">
+						<h3 id="what_is" class="what_is" name="what_is">What is spoora?</h3>
+						<p id="what_is_desc" style="margin-bottom: 50px;">
+							Spoora is an instant messaging platform allowing users to <b>redistribute
+								app advertising revenue towards social projects and NGO's.</b>
+						</p>
+						<h3 id="how_it_works">How it works?</h3>
+						<p id="how_it_works_desc" style="margin-bottom: 30px;">
+							Thanks to <b>spooris</b> points. User <b>is given</b> spooris
+							while <b>sending instant messages, adding new contacts</b>etc.Once
+							reached a minimum amount of spooris, user will be able to make a
+							donation to an NGO or social entity.
+						</p>
+
+						<div class="ui-grid-a" id="mainDesc">
+							<div class="ui-block-a" style="text-align: center;">
+								<div style="width: 64; margin-left: auto; margin-right: auto;">
+									<img width="64px" src="images/step1.png" alt="" />
+								</div>
+								<div
+									style="width: 234px; margin-left: auto; margin-right: auto; margin-top: 25px;">
+									<img width="234px" src="images/stepImage1.png" alt="" />
+								</div>
+								<div
+									style="margin-top: 18px; width: 190px; margin-left: auto; margin-right: auto;">
+									<span id="step_1">Get spooris while sending instant
+										messages and adding new contacts.</span>
+								</div>
+							</div>
+
+
+							<div class="ui-block-b" style="text-align: center;">
+								<div style="width: 64; margin-left: auto; margin-right: auto;">
+									<img width="64px" src="images/step2.png" alt="" />
+								</div>
+								<div
+									style="width: 234px; margin-left: auto; margin-right: auto; margin-top: 25px;">
+									<img width="234px" src="images/stepImage2.png" alt="" />
+								</div>
+								<div
+									style="margin-top: 25px; width: 190px; margin-left: auto; margin-right: auto;">
+									<span id="step_2">Exchange your spooris and select the
+										entity where funds will be transferred to.</span>
+								</div>
+							</div>
+
+
+							<div class="ui-block-c" style="text-align: center;">
+								<div style="width: 64; margin-left: auto; margin-right: auto;">
+									<img width="64px" src="images/step3.png" alt="" />
+								</div>
+								<div
+									style="width: 234px; margin-left: auto; margin-right: auto; margin-top: 25px;">
+									<img width="234px" src="images/stepImage3.png" alt="" />
+								</div>
+								<div
+									style="margin-top: 38px; width: 190px; margin-left: auto; margin-right: auto;">
+									<span id="step_3">Spoora will donate the amount to
+										selected entity within a maximum of 30 days.</span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- div id="donationsHistory" class="ui-grid-b descPanel" style="background:#F8F8F8;">
+
+                <div class="centeredDiv" style="width:850px !important;margin-bottom: 30px;">
+	                <h3 id="donations_history">Donations history</h3>
+		                <p id="what_is_desc" style="margin-bottom:50px;">The best way to be socially responsible is to be ultra transparent, so we publish every month the total list of donations made by the spoorers comunity thus everybody can verify that everything is done with total transparency.</b>
+						</p>
+					<h3 id="how_it_works">February</h3>
+		           		<table id="hor-minimalist-b" summary="Employee Pay Sheet">
+							<thead>
+							<tr>
+							<th scope="col">Social Entity</th>
+							<th scope="col">Amount</th>
+							<th scope="col">Donation Code</th>
+							<th scope="col">Date</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr>
+							<td>Red Cros</td>
+							<td>10.10&euro;</td>
+							<td>AATESD0025320</td>
+							<td>15/02/2014</td>
+							</tr>
+							<tr>
+							<td>Red Cros</td>
+							<td>13.20&euro;</td>
+							<td>ABTFSK0427370</td>
+							<td>18/02/2014</td>
+							</tr>
+							<tr>
+							<td>UNICEF</td>
+							<td>10.70&euro;</td>
+							<td>QWPOHG9344312</td>
+							<td>15/02/2014</td>
+							</tr>
+							<tr>
+							<td>UNICEF</td>
+							<td>12.30&euro;</td>
+							<td>BGFZZP3398343</td>
+							<td>20/02/2014</td>
+							</tr>
+							<tr>
+							<td>OXFAM</td>
+							<td>11.35&euro;</td>
+							<td>KJDHWW9238299</td>
+							<td>27/02/2014</td>
+							</tr>
+							</tbody>
+						</table>
+		            
+
+				</div>
+
+			</div-->
+		<div data-role="footer">
+			
+			<h3>
+				<a
+					style="text-decoration: none; color: white; font-weight: normal !important;"
+					href="mailto:contact@myspoora.com?subject=Contact us">contact@myspoora.com</a>
+				| <span id="madeIn">made in Barcelona</span>
+			</h3>
+		</div>
+
+
+	</div>
+
+
+	</section>
+	<!----------------- end MAIN LOGIN page ------------------------>
+
+	<!----------------- begin Conversations page ------------------------>
+	<section id="conversations" data-role="page" data-scroll="true"
+		data-title="Conversations"> <audio id="messageInSound">
+	<source src="audio/Whistle.ogg"></source> </audio> <header data-role="header"
+		data-position="fixed" data-id="toolbarMenu">
+	<div id="logo" class="column">
+		<img alt="Spoora" src="images/logoPortadaPetit.png" />
+	</div>
+
+	<div id="menuOptions">
+		<ul>
+			<li><a title="Your Spooris points" href="#conversations"><span
+					id="credits">0</span> spooris </a></li>
+			<li><a title="Your Spoora pin" href="#conversations"><span
+					id="pin"></span> </a><a href="#conversations"><span id="username"></span>
+			</a></li>
+			<li onclick="logoutAction()"><a href="">Logout</a></li>
+
+		</ul>
+	</div>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-49063868-1', 'myspoora.com');
+	  ga('send', 'pageview');
+
+	</script>
+	</header>
+	<div id="leftAd">
+		<script async
+			src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- myspooraLeft 120x600 -->
+		<ins class="adsbygoogle"
+			style="display: inline-block; width: 120px; height: 600px"
+			data-ad-client="ca-pub-7889216543567574" data-ad-slot="9255605133"></ins>
+		<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+	</div>
+
+	<div id="rightAd">
+		<script async
+			src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- myspoora right 120x600 -->
+		<ins class="adsbygoogle"
+			style="display: inline-block; width: 120px; height: 600px"
+			data-ad-client="ca-pub-7889216543567574" data-ad-slot="1732338336"></ins>
+		<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+	</div>
+
+	<div class="content" data-role="content">
+
+		<!--  TODO:use block-a for user profile?
+      	     div class="ui-block-a" data-scroll="true">
+				  
+      	     </div-->
+
+		<div class="ui-block-b" data-scroll="true" id="contactList">
+			<ul data-role="listview" data-filter="true"
+				data-filter-placeholder="Search contacts..." data-filter-theme="c">
+				<li data-role="list-divider">Contacts</li>
+				<li data-icon="false"><a href="#contacts">Start creating
+						contacts</a>
+				<li>Your contacts are synchronized at any time</li>
+				</li>
+
+				<li data-role="list-divider">Options</li>
+				<li onclick="loadURL('credits/selection')"><a>Buy credits
+						to start sending sms</a></li>
+				</li>
+			</ul>
+		</div>
+
+		<div class="ui-block-c">
+			<div id="chatList" data-scroll="true"></div>
+			<div id="sendBarDiv">
+
+				<textarea id="new_message"></textarea>
+				<div id="sendFileDiv">
+					<a href="" onclick="showFileSelectDialog()"><img
+						src="images/icon_attachment_black.png" alt="" /> send File
+						<form id="upload_form" enctype="multipart/form-data" method="post"
+							action="">
+							<input type="file" id="fileUpload" class="hidden"
+								onchange="fileSelected()" style="visibility: hidden;" />
+						</form> </a>
+
+				</div>
+				<div id="sendMessageDiv">
+					<button id="submitSendMessage" type="submit" name="submit">Send</button>
+				</div>
+			</div>
+
+
+
+		</div>
+
+	</div>
+
+
+	</section>
+	<!----------------- end Conversations page ------------------------>
+
+	<section id="donations" data-role="page" data-scroll="false">
+	<header data-role="header" data-position="persistent"  data-id="toolbarMenu">
+		<div id="menuOptions">
+		<ul>
+			<li><a href="#login-register" data-transition=""  data-direction="reverse"> Inicio </a></li>
+			<li><a href="#donations" class="ui-btn-active donations_history" data-transition="slide">Histórico donaciones</a></li>
+			<li><a href="#faq">FAQ</a></li>
+			<li><a rel="external" href="https://www.myspoora.com/blog">Blog</a></li>
+			<!--li><a href="">FAQ</a></li-->
+			<li><a class="contact" href="mailto:contact@myspoora.com?subject=support">Contact</a></li>
+			<li><a href="https://www.facebook.com/pages/Spoora/1402782556647772">Facebook</a></li>
+
+		</ul>
+	</div>
+
+	  </header>
+	<div class="content" data-role="content" style="height: auto !important;">
+
+		<div class="ui-grid-b descPanel">
+
+			<div class="centeredDiv"
+				style="width: 850px !important; margin-bottom: 30px;">
+				<h3 class="donations_history">Donations history</h3>
+				<p id="donations_history_desc">
+					The best way to be socially responsible is to be ultra transparent,
+					so we publish every month the total list of donations made by the
+					spoorers comunity thus everybody can verify that everything is done
+					with total transparency.</b>
+				</p>
+				<p id="donations_from_start" style="margin-bottom: 50px;">Total donated by spoorers from 2014 is: 1771.82</p>
+				<h3 id="donations_march15">Donations March</h3>
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 130.57&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.22&euro;</td>
+							<td>PZZIRL140097</td>
+							<td>01/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>OICUCF402454</td>
+							<td>01/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.92&euro;</td>
+							<td>ZTWFEM097291</td>
+							<td>01/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>6.01&euro;</td>
+							<td>XSNPDA615209</td>
+							<td>03/03/2015</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>20.01&euro;</td>
+							<td>NYRMAZ359737</td>
+							<td>03/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>PXIKOX379210</td>
+							<td>06/03/2015</td>
+						</tr>
+							<tr>
+							<td>Amnistía Internacional</td>
+							<td> 0.05&euro;</td>
+							<td>SNKDEC207197</td>
+							<td>06/03/2015</td>
+						</tr>
+						<tr>
+							<td>Unicef</td>
+							<td>1.01&euro;</td>
+							<td>ZRGZSJ428284</td>
+							<td>06/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td> 5.075&euro;</td>
+							<td>SSJCOM815557</td>
+							<td>07/03/2015</td>
+						</tr>
+						<tr>
+							<td>Unicef</td>
+							<td>0.05&euro;</td>
+							<td>DKWUHT361271</td>
+							<td>07/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>0.05&euro;</td>
+							<td>ZXOETK349214</td>
+							<td>07/03/2015</td>
+						</tr>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>0.05&euro;</td>
+							<td>JFZEXQ121829</td>
+							<td>07/03/2015</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.05&euro;</td>
+							<td>FJAFGQ122184</td>
+							<td>07/03/2015</td>
+						</tr>
+						<tr>
+							<td>Marató de TV3</td>
+							<td>0.05&euro;</td>
+							<td>DMLFIQ635127</td>
+							<td>07/03/2015</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.13&euro;</td>
+							<td>JWFQGP632083</td>
+							<td>07/03/2015</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.69&euro;</td>
+							<td>QRTPOC470241</td>
+							<td>09/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>UXGYZE690436</td>
+							<td>10/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.05&euro;</td>
+							<td>PGBZKO025141</td>
+							<td>11/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.005&euro;</td>
+							<td>UPWCHP137441</td>
+							<td>12/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>9.035&euro;</td>
+							<td>NYTHBR962501</td>
+							<td>13/03/2015</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.57&euro;</td>
+							<td>ITWBPY557786</td>
+							<td>13/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.005&euro;</td>
+							<td>FBUZSF508958</td>
+							<td>14/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.005&euro;</td>
+							<td>MQXJMD265937</td>
+							<td>16/03/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.05&euro;</td>
+							<td>QBRTZD336621</td>
+							<td>16/03/2015</td>
+						</tr>
+						<tr>
+							<td>OXFAM Intermón</td>
+							<td>0.05&euro;</td>
+							<td>BJJMPR368635</td>
+							<td>16/03/2015</td>
+						</tr>
+						<tr>
+							<td>Unicef</td>
+							<td> 0.05&euro;</td>
+							<td>PUTXTQ411731</td>
+							<td>16/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>RQOATK094974</td>
+							<td>17/03/2015</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>0.05&euro;</td>
+							<td>MSJZNA408758</td>
+							<td>18/03/2015</td>
+						</tr>
+						<tr>
+							<td>Marató de TV3</td>
+							<td> 1.01&euro;</td>
+							<td>KTXFCF483747</td>
+							<td>18/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>0.05&euro;</td>
+							<td>XDWJRF748385</td>
+							<td>18/03/2015</td>
+						</tr>
+								<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.05&euro;</td>
+							<td>MFTMHJ385149</td>
+							<td>18/03/2015</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td> 0.05&euro;</td>
+							<td>HHXGOX070165</td>
+							<td>20/03/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.05&euro;</td>
+							<td>RBWYBN825142</td>
+							<td>21/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>CSDUHH869511</td>
+							<td>22/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.1&euro;</td>
+							<td>NBEEWF071248</td>
+							<td>22/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>1.89&euro;</td>
+							<td>YBNHIO884669</td>
+							<td>23/03/2015</td>
+						</tr>
+								<tr>
+							<td>Save the Childre</td>
+							<td>0.05&euro;</td>
+							<td>LAABCD923562</td>
+							<td>24/03/2015</td>
+						</tr>
+						<tr>
+							<td>Marató de TV3</td>
+							<td> 0.05&euro;</td>
+							<td>OZYNNS428108</td>
+							<td>24/03/2015</td>
+						</tr>
+						<tr>
+							<td>Unicef</td>
+							<td>0.05&euro;</td>
+							<td>RATTWF810152</td>
+							<td>25/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>RIWELI021018</td>
+							<td>26/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.18&euro;</td>
+							<td>NSBPSO057266</td>
+							<td>27/03/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>MXDQAG710012</td>
+							<td>28/03/2015</td>
+						</tr>
+												<tr>
+							<td>ACNUR</td>
+							<td>5.105&euro;</td>
+							<td>JZRFGW689059</td>
+							<td>29/03/2015</td>
+						</tr>
+												<tr>
+							<td>Marató de TV3</td>
+							<td> 0.05&euro;</td>
+							<td>NUAICN078121</td>
+							<td>29/03/2015</td>
+						</tr>
+												<tr>
+							<td>ACNUR</td>
+							<td>0.32&euro;</td>
+							<td>NPRZKW291270</td>
+							<td>29/03/2015</td>
+						</tr>
+												<tr>
+							<td>ACNUR</td>
+							<td>0.28&euro;</td>
+							<td>KMMDGV361544</td>
+							<td>30/03/2015</td>
+						</tr>
+												<tr>
+							<td>Marató de TV3</td>
+							<td>0.24&euro;</td>
+							<td>FFZBYW285435</td>
+							<td>30/03/2015</td>
+						</tr>
+												<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.16&euro;</td>
+							<td>JOQSHG240533</td>
+							<td>30/03/2015</td>
+						</tr>
+												<tr>
+							<td>Marató de TV3</td>
+							<td> 0.05&euro;</td>
+							<td>FGXTTP475933</td>
+							<td>30/03/2015</td>
+						</tr>
+												<tr>
+							<td>ACNUR</td>
+							<td>5.05&euro;</td>
+							<td>DMPRWS879577</td>
+							<td>31/03/2015</td>
+						</tr>
+												<tr>
+							<td>Save the Children</td>
+							<td> 0.05&euro;</td>
+							<td>DFYXYN136494</td>
+							<td>31/03/2015</td>
+						</tr>
+												<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>0.19&euro;</td>
+							<td>NRJIMR990364</td>
+							<td>31/03/2015</td>
+						</tr>
+												<tr>
+							<td>Unicef</td>
+							<td>0.05&euro;</td>
+							<td>OEPBAU968892</td>
+							<td>31/03/2015</td>
+						</tr>
+												<tr>
+							<td>Marató de TV3</td>
+							<td>1.26&euro;</td>
+							<td>KZQFJA888657</td>
+							<td>31/03/2015</td>
+						</tr>
+						
+						</tbody>
+				</table>
+				<h3 id="donations_february15">Donations February</h3>
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 115.09&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Unicef</td>
+							<td>0.04&euro;</td>
+							<td>TOJWTO428657</td>
+							<td>02/02/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.25&euro;</td>
+							<td>FLFCDH075928</td>
+							<td>02/02/2015</td>
+						</tr>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>0.67&euro;</td>
+							<td>RPZUKM432460</td>
+							<td>03/02/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.05&euro;</td>
+							<td>FFCNYH545212</td>
+							<td>03/02/2015</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.17&euro;</td>
+							<td>PBKRVJ724389</td>
+							<td>03/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>DSBHPB953818</td>
+							<td>06/02/2015</td>
+						</tr>
+							<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>XSQNPM219565</td>
+							<td>07/02/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.53&euro;</td>
+							<td>EXKGXN419220</td>
+							<td>08/02/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.05&euro;</td>
+							<td>DHEZPI621881</td>
+							<td>08/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.105&euro;</td>
+							<td>BDGBVF293097</td>
+							<td>11/02/2015</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>0.2&euro;</td>
+							<td>OSAUXQ201691</td>
+							<td>13/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>CPLGRG667230</td>
+							<td>14/02/2015</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>0.05&euro;</td>
+							<td>QIADCK865044</td>
+							<td>14/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.19&euro;</td>
+							<td>YEVYJB622749</td>
+							<td>18/02/2015</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>1.34&euro;</td>
+							<td>YMCLGJ744459</td>
+							<td>18/02/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.55&euro;</td>
+							<td>IBCODT469992</td>
+							<td>18/02/2015</td>
+						</tr>
+						<tr>
+							<td>Unicef</td>
+							<td>1.54&euro;</td>
+							<td>QVLTKN716591</td>
+							<td>18/02/2015</td>
+						</tr>
+						<tr>
+							<td>Unicef</td>
+							<td>6.61&euro;</td>
+							<td>ZTAEHN569019</td>
+							<td>18/02/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.4&euro;</td>
+							<td>RBPIJK570185</td>
+							<td>18/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.2&euro;</td>
+							<td>LBEEEQ665717</td>
+							<td>19/02/2015</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>5.36&euro;</td>
+							<td>HCKOGV741428</td>
+							<td>19/02/2015</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>0.82&euro;</td>
+							<td>GKJANQ362911</td>
+							<td>19/02/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>2.51&euro;</td>
+							<td>YQCRDO590070</td>
+							<td>19/02/2015</td>
+						</tr>
+						<tr>
+							<td>Unicef</td>
+							<td>2.19&euro;</td>
+							<td>VRGCOK867092</td>
+							<td>20/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>CFMHMX802135</td>
+							<td>21/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td> 0.48&euro;</td>
+							<td>YJVJED409392</td>
+							<td>21/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>AOHJDK684715</td>
+							<td>22/02/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.77&euro;</td>
+							<td>WYUSDI973781</td>
+							<td>22/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>1.54&euro;</td>
+							<td>HKNKGF626543</td>
+							<td>23/02/2015</td>
+						</tr>
+						<tr>
+							<td>Anesvad</td>
+							<td>1.24&euro;</td>
+							<td>GPNAQL186162</td>
+							<td>24/02/2015</td>
+						</tr>
+								<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.01&euro;</td>
+							<td>YAKHSL223368</td>
+							<td>25/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td> 5&euro;</td>
+							<td>VAOSIA044550</td>
+							<td>25/02/2015</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>2.94&euro;</td>
+							<td>HZPQVH883756</td>
+							<td>25/02/2015</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.65&euro;</td>
+							<td>BDMRZK777650</td>
+							<td>25/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>2.79&euro;</td>
+							<td>MAEVYK250417</td>
+							<td>25/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.015&euro;</td>
+							<td>SNCHLF005412</td>
+							<td>26/02/2015</td>
+						</tr>
+								<tr>
+							<td>ACNUR</td>
+							<td>5.025&euro;</td>
+							<td>ICGFUW073949</td>
+							<td>26/02/2015</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td> 0.28&euro;</td>
+							<td>EJEIDJ197970</td>
+							<td>26/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.03&euro;</td>
+							<td>ZMAXMM180823</td>
+							<td>27/02/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.15&euro;</td>
+							<td>ZPCDXF152881</td>
+							<td>27/02/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.26&euro;</td>
+							<td>GXCOTZ891206</td>
+							<td>28/02/2015</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.73&euro;</td>
+							<td>XMLFNJ243159</td>
+							<td>28/02/2015</td>
+						</tr>
+						
+						</tbody>
+				</table>
+					<h3 id="donations_janvier15">Donations January</h3>
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 104.9&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>NTCQXF945547</td>
+							<td>01/01/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>5.88&euro;</td>
+							<td>LQUECC269756</td>
+							<td>03/01/2015</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.25&euro;</td>
+							<td>UVPFVR570564</td>
+							<td>05/01/2015</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.05&euro;</td>
+							<td>VHESIN885731</td>
+							<td>07/01/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.16&euro;</td>
+							<td>JZCISI871154 </td>
+							<td>10/01/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>SZVCCR944428</td>
+							<td>10/01/2015</td>
+						</tr>
+							<tr>
+							<td>ACNUR</td>
+							<td>5.035&euro;</td>
+							<td>DXGBMN951117</td>
+							<td>14/01/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>KFCOII364953</td>
+							<td>15/01/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>11.73&euro;</td>
+							<td>LCZONA637125</td>
+							<td>15/01/2015</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>3.84&euro;</td>
+							<td>EILNZJ212711</td>
+							<td>15/01/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.05&euro;</td>
+							<td>ZAHOVV191613</td>
+							<td>16/01/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.09&euro;</td>
+							<td>NCQHHV418543 </td>
+							<td>17/01/2015</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.05&euro;</td>
+							<td>OJJOTI275385</td>
+							<td>21/01/2015</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>6.01&euro;</td>
+							<td>WRVARL362722</td>
+							<td>21/01/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>7.425&euro;</td>
+							<td>MZDSAM453043</td>
+							<td>22/01/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>UGDIFV636808</td>
+							<td>23/01/2014</td>
+						</tr>
+						<tr>
+							<td>Marató de TV3</td>
+							<td>0.05&euro;</td>
+							<td>BGISYE302553</td>
+							<td>23/01/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>UGDIFV636808</td>
+							<td>23/01/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.25&euro;</td>
+							<td>PKKXSB968060</td>
+							<td>26/01/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.105&euro;</td>
+							<td>USQJHO489895</td>
+							<td>26/01/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.08&euro;</td>
+							<td>KGVMXJ675188</td>
+							<td>26/01/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>0.05&euro;</td>
+							<td>VANUCS487932</td>
+							<td>27/01/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>10.3&euro;</td>
+							<td>PNNORJ383770</td>
+							<td>27/01/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>1&euro;</td>
+							<td>PTSUAF343012</td>
+							<td>27/01/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.58&euro;</td>
+							<td>NUKLGU576499</td>
+							<td>29/01/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td> 5.01&euro;</td>
+							<td>UYUJMO505149</td>
+							<td>30/01/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.05&euro;</td>
+							<td>DUVPCF706226</td>
+							<td>30/01/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.09&euro;</td>
+							<td>NZWBNG709860</td>
+							<td>30/01/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>0.11&euro;</td>
+							<td>LNDSGW521615</td>
+							<td>30/01/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>0.66&euro;</td>
+							<td>WIABJI345079</td>
+							<td>31/01/2014</td>
+						</tr>
+						
+						</tbody>
+				</table>
+				<h3 id="donations_december">Donations December</h3>
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 128.94&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.52&euro;</td>
+							<td>BRRAOL844471</td>
+							<td>02/12/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.64&euro;</td>
+							<td>YQCRDJ188109</td>
+							<td>02/12/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>8.27&euro;</td>
+							<td>MJZIOB449488 </td>
+							<td>03/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>KDNTKF954432</td>
+							<td>05/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.54&euro;</td>
+							<td>BRLXXV766098</td>
+							<td>06/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.015&euro;</td>
+							<td>XUVBKR597503</td>
+							<td>07/12/2014</td>
+						</tr>
+							<tr>
+							<td>ACNUR</td>
+							<td>5.005&euro;</td>
+							<td>SDRCTG408574</td>
+							<td>07/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.195&euro;</td>
+							<td>TYJOMT236371</td>
+							<td>08/12/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>1.34&euro;</td>
+							<td>XAQNUF981480</td>
+							<td>08/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.03&euro;</td>
+							<td>YCCDWO552783</td>
+							<td>11/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>GPGCDJ674841</td>
+							<td>12/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>JSAQYA400766</td>
+							<td>13/12/2014</td>
+						</tr>
+						<tr>
+							<td>Marató de TV3</td>
+							<td>0.57&euro;</td>
+							<td>LKQAJJ210020</td>
+							<td>15/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.005&euro;</td>
+							<td>SWWDZN792360</td>
+							<td>16/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.01&euro;</td>
+							<td>AXSYQP398726</td>
+							<td>16/12/2014</td>
+						</tr>
+						<tr>
+							<td>Marató de TV3</td>
+							<td>1.87&euro;</td>
+							<td>LHDODX246607</td>
+							<td>16/12/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.47&euro;</td>
+							<td>JHGIWJ102035</td>
+							<td>17/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>LRLPTJ389809</td>
+							<td>18/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>6.31&euro;</td>
+							<td>GXIXRT098398</td>
+							<td>19/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.25&euro;</td>
+							<td>WHCVVX384175</td>
+							<td>19/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.06&euro;</td>
+							<td>FTKBFT864527</td>
+							<td>20/12/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>0.3&euro;</td>
+							<td>QAGSPW582323</td>
+							<td>20/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.02&euro;</td>
+							<td>AVNOWO441009</td>
+							<td>22/12/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.3&euro;</td>
+							<td>CWNLGA819701</td>
+							<td>23/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.21&euro;</td>
+							<td>CKLSLP633455</td>
+							<td>25/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.25&euro;</td>
+							<td>DJRFIN612538</td>
+							<td>26/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>7.325&euro;</td>
+							<td>MUOKTQ753292</td>
+							<td>27/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.19&euro;</td>
+							<td>JEGUHB427438</td>
+							<td>29/12/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.82&euro;</td>
+							<td>BQJEXT038016</td>
+							<td>29/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.155&euro;</td>
+							<td>AQGAOW939005</td>
+							<td>30/12/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.005&euro;</td>
+							<td>SUBVCB843344</td>
+							<td>31/12/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td> 0.75&euro;</td>
+							<td>FVKOSN803379</td>
+							<td>31/12/2014</td>
+						</tr>
+	
+					</tbody>
+				</table>
+				<h3 id="donations_november">November</h3>
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 121.085&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>4.47&euro;</td>
+							<td>UJPRTJ057273</td>
+							<td>01/11/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.15&euro;</td>
+							<td>VTCPRX077322</td>
+							<td>03/11/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.7&euro;</td>
+							<td>RJQADC428041</td>
+							<td>03/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.075&euro;</td>
+							<td>RBYPBH643855  </td>
+							<td>03/11/2014</td>
+						</tr>
+						<tr>
+							<td>SONRISAS DE BOMBAY</td>
+							<td>5.005&euro;</td>
+							<td>XYVWNF463645</td>
+							<td>03/11/2014</td>
+						</tr>
+						<tr>
+							<td>SONRISAS DE BOMBAY</td>
+							<td>5.01&euro;</td>
+							<td>HCXRHZ427253 </td>
+							<td>03/11/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.12&euro;</td>
+							<td>FUHUYE957170 </td>
+							<td>04/11/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.1&euro;</td>
+							<td>UIOJUQ031665 </td>
+							<td>05/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>0.18&euro;</td>
+							<td>AYPTON371309</td>
+							<td>06/11/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.07&euro;</td>
+							<td>PULSQS994004 </td>
+							<td>06/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.29&euro;</td>
+							<td>YUTIVI107739 </td>
+							<td>09/10/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.005&euro;</td>
+							<td>JOFGWE421900</td>
+							<td>06/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5&euro;</td>
+							<td>IKDAHX381001 </td>
+							<td>07/11/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>5.08&euro;</td>
+							<td>GBGLCV196509 </td>
+							<td>07/11/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.07&euro;</td>
+							<td>YDPCSO722412</td>
+							<td>09/11/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.4&euro;</td>
+							<td>NVVNEX354118</td>
+							<td>11/11/2014</td>
+						</tr>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>0.07&euro;</td>
+							<td>HQEIPE143337</td>
+							<td>11/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.255&euro;</td>
+							<td>EIYOOU813897</td>
+							<td>12/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.005&euro;</td>
+							<td>BOFVQR869373</td>
+							<td>13/11/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>1.2&euro;</td>
+							<td>FPMGIP023165</td>
+							<td>13/11/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.07&euro;</td>
+							<td>IHMWVU463227 </td>
+							<td>13/11/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.13&euro;</td>
+							<td>KMKIEF686871 </td>
+							<td>13/11/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.26&euro;</td>
+							<td>OWCVLO899733</td>
+							<td>13/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.255&euro;</td>
+							<td>WSEXLG892972</td>
+							<td>14/11/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.09&euro;</td>
+							<td>CXTLWC955060</td>
+							<td>14/11/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.11&euro;</td>
+							<td>HPVWVS840600 </td>
+							<td>15/11/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.84&euro;</td>
+							<td>TQGKWP887487 </td>
+							<td>17/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.045&euro;</td>
+							<td>BUDOGU191482</td>
+							<td>17/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.045&euro;</td>
+							<td>CITWSH998935</td>
+							<td>17/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.04&euro;</td>
+							<td>TNZYEH450133</td>
+							<td>20/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.96&euro;</td>
+							<td>BDRJJG448195</td>
+							<td>21/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.32&euro;</td>
+							<td>YJGYXE606182</td>
+							<td>21/11/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.07&euro;</td>
+							<td>NSPCLE382026</td>
+							<td>21/11/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>0.03&euro;</td>
+							<td>BIQYMV981146</td>
+							<td>22/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.005&euro;</td>
+							<td>LOXFZR131913</td>
+							<td>22/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.255&euro;</td>
+							<td>JDCAFA341685</td>
+							<td>24/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.01&euro;</td>
+							<td>PHESTP147305</td>
+							<td>26/11/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.08&euro;</td>
+							<td>PHESTP147305</td>
+							<td>26/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>0.07&euro;</td>
+							<td>QLYEQY189571</td>
+							<td>26/11/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.51&euro;</td>
+							<td>DQGDYN219936</td>
+							<td>26/11/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.64&euro;</td>
+							<td>IEFRWS390343</td>
+							<td>26/11/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.14&euro;</td>
+							<td>QOBZDW306799 </td>
+							<td>27/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.005&euro;</td>
+							<td>UNPWZC066122</td>
+							<td>27/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.255&euro;</td>
+							<td>TQHEID123993</td>
+							<td>28/11/2014</td>
+						</tr>
+						<tr>
+							<td>Sonrisas de Bombay</td>
+							<td>5.005&euro;</td>
+							<td>AKHOSD041669 </td>
+							<td>29/11/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.5&euro;</td>
+							<td>HOLLWH960456 </td>
+							<td>29/11/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.03&euro;</td>
+							<td>CYYROF274826</td>
+							<td>29/11/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>0.02&euro;</td>
+							<td>GHJMPP197031</td>
+							<td>29/11/2014</td>
+						</tr>
+						<tr>
+							<td>Anesvad</td>
+							<td>0.5&euro;</td>
+							<td>LTRPWG116703 </td>
+							<td>29/11/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.54&euro;</td>
+							<td>EGNOGS038704 </td>
+							<td>30/11/2014</td>
+						</tr>
+						
+
+					</tbody>
+				</table>
+				<h3 id="donations_october">October</h3>
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 294.77&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>5.09&euro;</td>
+							<td>FFWOFM803629</td>
+							<td>01/10/2014</td>
+						</tr>
+						<tr>
+							<td>Anesvad</td>
+							<td>11.08&euro;</td>
+							<td>LHTRJN090343</td>
+							<td>01/10/2014</td>
+						</tr>
+						<tr>
+							<td>Anesvad</td>
+							<td>0.03&euro;</td>
+							<td>XUUCHH528355</td>
+							<td>02/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>7.385&euro;</td>
+							<td>ZEAZNI954548</td>
+							<td>02/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>12.525&euro;</td>
+							<td>XYVWNF463645</td>
+							<td>10/02/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>10.01&euro;</td>
+							<td>WWKNVO369283</td>
+							<td>05/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>DUGCAX850722</td>
+							<td>07/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>FDIFZQ430354</td>
+							<td>08/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.005&euro;</td>
+							<td>BPBFGJ324693</td>
+							<td>08/10/2014</td>
+						</tr>
+						<tr>
+							<td>OXFAM Intermón</td>
+							<td>0.07&euro;</td>
+							<td>AQXDFE149311</td>
+							<td>08/010/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>PYSZNK784763</td>
+							<td>09/10/2014</td>
+						</tr>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>0.27&euro;</td>
+							<td>RRQKTB154693</td>
+							<td>09/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.01&euro;</td>
+							<td>KPIXHU094510</td>
+							<td>10/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.04&euro;</td>
+							<td>HYGLCW484532</td>
+							<td>10/10/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.09&euro;</td>
+							<td>HGONDV227261</td>
+							<td>11/10/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.13&euro;</td>
+							<td>EAYYGN922158</td>
+							<td>12/10/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>0.07&euro;</td>
+							<td>MSKIYX641190</td>
+							<td>12/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.45&euro;</td>
+							<td>ZUGVGW805644</td>
+							<td>13/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.005&euro;</td>
+							<td>BRSTFX547577</td>
+							<td>13/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.045&euro;</td>
+							<td>SNORKR379697</td>
+							<td>13/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>XKDZNT388574</td>
+							<td>13/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.34&euro;</td>
+							<td>WCSOYQ577194</td>
+							<td>15/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.025&euro;</td>
+							<td>UZFNAY894234</td>
+							<td>15/10/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.7&euro;</td>
+							<td>VOHBGB003218</td>
+							<td>15/10/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.35&euro;</td>
+							<td>IBBGNE394311</td>
+							<td>15/10/2014</td>
+						</tr>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>6.44&euro;</td>
+							<td>RRKWUU283960</td>
+							<td>16/10/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>3.96&euro;</td>
+							<td>WBCPTK831888</td>
+							<td>17/10/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.7&euro;</td>
+							<td>YGMUMR116921</td>
+							<td>18/10/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.13&euro;</td>
+							<td>XEQNSK372749</td>
+							<td>18/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>VULYZY625712</td>
+							<td>18/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>6.03&euro;</td>
+							<td>VRIGEG179880</td>
+							<td>18/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.095&euro;</td>
+							<td>BGRAOO023474</td>
+							<td>18/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5&euro;</td>
+							<td>JPSLOX842334</td>
+							<td>18/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.11&euro;</td>
+							<td>ULANMZ605907</td>
+							<td>20/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.325&euro;</td>
+							<td>UJWGKV859741</td>
+							<td>20/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.075&euro;</td>
+							<td>UPTHSH297318</td>
+							<td>22/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.045&euro;</td>
+							<td>MFLQUJ963410</td>
+							<td>22/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>VULYZY625712</td>
+							<td>18/09/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>6.31&euro;</td>
+							<td>ERAHAL318658</td>
+							<td>22/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.02&euro;</td>
+							<td>CXCLLN886376</td>
+							<td>23/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.025&euro;</td>
+							<td>JPZJEV600458</td>
+							<td>23/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>8.165&euro;</td>
+							<td>SIUPWE322332</td>
+							<td>24/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.605&euro;</td>
+							<td>BPSOUR956693</td>
+							<td>24/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.005&euro;</td>
+							<td>AIYXWX109720</td>
+							<td>24/10/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.07&euro;</td>
+							<td>UOEGKL264738</td>
+							<td>24/10/2014</td>
+						</tr>
+						<tr>
+							<td>OXFAM Intermón</td>
+							<td>8.05&euro;</td>
+							<td>OWZYRZ129988</td>
+							<td>24/10/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.4&euro;</td>
+							<td>WYRSPQ819093</td>
+							<td>26/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>RECTQP955645</td>
+							<td>27/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>NYUDSF172780</td>
+							<td>27/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>6.02&euro;</td>
+							<td>MNUSNL662166</td>
+							<td>28/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>AZSOPD351578</td>
+							<td>28/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.15&euro;</td>
+							<td>ODEDML779605</td>
+							<td>28/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.04&euro;</td>
+							<td>JNUUFF094000</td>
+							<td>28/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.005&euro;</td>
+							<td>CYSURZ532671</td>
+							<td>28/10/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.42&euro;</td>
+							<td>XZNLYI909474</td>
+							<td>28/10/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.28&euro;</td>
+							<td>AUAJVV945350</td>
+							<td>29/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.255&euro;</td>
+							<td>RAMONC115496</td>
+							<td>29/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.075&euro;</td>
+							<td>BKSRNY387882</td>
+							<td>29/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>5.5&euro;</td>
+							<td>XPURVQ976181</td>
+							<td>30/10/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.02&euro;</td>
+							<td>JOTLQS849589</td>
+							<td>30/10/2014</td>
+						</tr>
+
+						<tr>
+							<td>ACNUR</td>
+							<td>11.375&euro;</td>
+							<td>BAYDJL896381</td>
+							<td>31/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>7.71&euro;</td>
+							<td>MAMMMX413353</td>
+							<td>31/10/2014</td>
+						</tr>
+						<tr>
+							<td>ACNUR</td>
+							<td>10.24&euro;</td>
+							<td>KTOGUQ327720</td>
+							<td>31/10/2014</td>
+						</tr>
+						 <tr>
+							<td>ACNUR</td>
+							<td>5.62&euro;</td>
+							<td>NBQFTL559862</td>
+							<td>31/10/2014</td>
+						</tr>
+
+					</tbody>
+				</table>
+				<h3 id="donations_september">September</h3>
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 145.685&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>3.64&euro;</td>
+							<td>YGYPKN528838</td>
+							<td>01/09/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>1&euro;</td>
+							<td>VGUYXD852882</td>
+							<td>01/09/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>2&euro;</td>
+							<td>CUWKHR783891</td>
+							<td>01/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>VLBEDC925606</td>
+							<td>02/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>5&euro;</td>
+							<td>HBXWKY193447</td>
+							<td>03/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>VLBEDC925606</td>
+							<td>02/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.1&euro;</td>
+							<td>HVLUAP262312</td>
+							<td>03/09/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.1&euro;</td>
+							<td>ZEKHYN024637</td>
+							<td>03/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>RMCFRV774108</td>
+							<td>04/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>RXDGWR527559</td>
+							<td>05/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.05&euro;</td>
+							<td>OUGMUU664887</td>
+							<td>07/09/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>1.18&euro;</td>
+							<td>MHNKBB868423</td>
+							<td>07/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>VVKASG673356</td>
+							<td>08/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.1&euro;</td>
+							<td>ZUMFTI931522</td>
+							<td>08/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>BSICLE053663</td>
+							<td>09/09/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.42&euro;</td>
+							<td>DQEIAO508370</td>
+							<td>09/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.015&euro;</td>
+							<td>WTTMEU951693</td>
+							<td>10/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1&euro;</td>
+							<td>PKYKKD736379</td>
+							<td>10/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1&euro;</td>
+							<td>WXXPES840026</td>
+							<td>10/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.005&euro;</td>
+							<td>JXXAKD790947</td>
+							<td>10/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.005&euro;</td>
+							<td>XTFNBZ073435</td>
+							<td>11/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>6.425&euro;</td>
+							<td>JMUEUK193356</td>
+							<td>13/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>IBLIOG715529</td>
+							<td>14/09/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.15&euro;</td>
+							<td>NVEDZE852643</td>
+							<td>15/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>19.57&euro;</td>
+							<td>ZJEJWO912420</td>
+							<td>16/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.11&euro;</td>
+							<td>DLUSJR449644</td>
+							<td>17/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>UIAEEC095707</td>
+							<td>18/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.03&euro;</td>
+							<td>IQDCUQ386478</td>
+							<td>19/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.12&euro;</td>
+							<td>ZMVGCY492253</td>
+							<td>19/09/2014</td>
+						</tr>
+						<tr>
+							<td>Unicef</td>
+							<td>0.98&euro;</td>
+							<td>BTESLN318352</td>
+							<td>19/09/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>1.1&euro;</td>
+							<td>OVSQRX169347</td>
+							<td>21/09/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>0.12&euro;</td>
+							<td>EIEBLJ609322</td>
+							<td>21/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.16&euro;</td>
+							<td>XSIYVQ561375</td>
+							<td>22/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.04&euro;</td>
+							<td>KBSNKH726367</td>
+							<td>22/09/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.51&euro;</td>
+							<td>RDCHRK451959</td>
+							<td>22/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>PCSGWD300571</td>
+							<td>24/00/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.04&euro;</td>
+							<td>WPGTPX287758</td>
+							<td>24/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.015&euro;</td>
+							<td>ARGNRC205453</td>
+							<td>25/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.025&euro;</td>
+							<td>JVCEDH128188</td>
+							<td>26/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>EKBXEC723144</td>
+							<td>27/09/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.51&euro;</td>
+							<td>YZKTJC652218</td>
+							<td>28/09/2014</td>
+						</tr>
+
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.005&euro;</td>
+							<td>FEITDC719946</td>
+							<td>29/09/2014</td>
+						</tr>
+
+					</tbody>
+				</table>
+				<h3 id="donations_august">August</h3>
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 210.67&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>ANESVAD</td>
+							<td>16.16&euro;</td>
+							<td>TEDDSU311607</td>
+							<td>07/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>0.10&euro;</td>
+							<td>WXTJMU598418</td>
+							<td>07/08/2014</td>
+						</tr>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>0.10&euro;</td>
+							<td>AUDHUY226929</td>
+							<td>08/08/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.55&euro;</td>
+							<td>BZMUAY953735</td>
+							<td>08/08/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>11.24&euro;</td>
+							<td>ZJOCKB983383</td>
+							<td>08/08/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el hambre</td>
+							<td>1.3&euro;</td>
+							<td>BFWDOK367071</td>
+							<td>09/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>6&euro;</td>
+							<td>FNGNVZ468529</td>
+							<td>09/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>OBQGCB207834</td>
+							<td>09/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>6&euro;</td>
+							<td>FNGNVZ468529</td>
+							<td>09/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.495&euro;</td>
+							<td>TQOEJP689393</td>
+							<td>10/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.025&euro;</td>
+							<td>RGOFWR809342</td>
+							<td>13/08/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.44&euro;</td>
+							<td>REJYUZ650725</td>
+							<td>13/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>6&euro;</td>
+							<td>WEGWWI961206</td>
+							<td>14/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>ELGVFW297891</td>
+							<td>14/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.22&euro;</td>
+							<td>WXXPES840026</td>
+							<td>14/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>WMLZRM855112</td>
+							<td>17/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>FUTORR624487</td>
+							<td>17/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>NAIQKJ470586</td>
+							<td>17/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>7.025&euro;</td>
+							<td>YGAFBQ378544</td>
+							<td>18/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.70&euro;</td>
+							<td>GDCAQC862559</td>
+							<td>18/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.75&euro;</td>
+							<td>UJGSOG380330</td>
+							<td>18/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>AQGSAN088193</td>
+							<td>19/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.69&euro;</td>
+							<td>HECPCC177332</td>
+							<td>20/08/2014</td>
+						</tr>
+						<tr>
+							<td>Intermon Oxfam</td>
+							<td>0.46&euro;</td>
+							<td>OBZSNN509837</td>
+							<td>20/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>WUXVIF105930</td>
+							<td>22/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>BZQWIL030862</td>
+							<td>22/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.30&euro;</td>
+							<td>TIPWVY054787</td>
+							<td>23/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.15&euro;</td>
+							<td>DYGCRV326992</td>
+							<td>23/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.16&euro;</td>
+							<td>AFQRME852887</td>
+							<td>24/08/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.9&euro;</td>
+							<td>WMRAQW628422</td>
+							<td>24/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>WEGDNA513022</td>
+							<td>25/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>7.55&euro;</td>
+							<td>YSFOOB589439</td>
+							<td>26/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>0.57&euro;</td>
+							<td>SZBFDI246418</td>
+							<td>26/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.58&euro;</td>
+							<td>CCTYJA007710</td>
+							<td>26/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>7.55&euro;</td>
+							<td>YSFOOB589439</td>
+							<td>26/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>KOKBOO114299</td>
+							<td>27/08/2014</td>
+						</tr>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>0.33&euro;</td>
+							<td>ZILMLN648853</td>
+							<td>27/08/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el hambre</td>
+							<td>5.7&euro;</td>
+							<td>HWTTQB210573</td>
+							<td>28/08/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>10&euro;</td>
+							<td>TVKPFP886409</td>
+							<td>30/08/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.67&euro;</td>
+							<td>CPEYCU672293</td>
+							<td>30/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.2&euro;</td>
+							<td>OLVZNO393055</td>
+							<td>30/08/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>YGIOVX126926</td>
+							<td>31/08/2014</td>
+						</tr>
+
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>VNJJUL911878</td>
+							<td>31/08/2014</td>
+						</tr>
+
+					</tbody>
+				</table>
+					
+				<h3 id="donations_july">July</h3>
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 79.78&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Acción contra el hambre</td>
+							<td>0.15&euro;</td>
+							<td>URAIGI463420</td>
+							<td>02/07/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.01&euro;</td>
+							<td>SCUQVS772887</td>
+							<td>08/07/2014</td>
+						</tr>
+
+						<tr>
+							<td>UNICEF</td>
+							<td>0.59&euro;</td>
+							<td>MSBPNU143814</td>
+							<td>09/07/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>5.25&euro;</td>
+							<td>YDEUAY519754</td>
+							<td>09/07/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.55&euro;</td>
+							<td>VGJGFC729977</td>
+							<td>10/07/2014</td>
+						</tr>
+
+						<tr>
+							<td>Intermon Oxfam</td>
+							<td>5.07&euro;</td>
+							<td>RTNNHN282725</td>
+							<td>10/07/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>1.01&euro;</td>
+							<td>PCESIZ247721</td>
+							<td>10/07/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>5,62&euro;</td>
+							<td>UNICEF</td>
+							<td>10/07/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>IRRZWJ527437</td>
+							<td>11/07/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.17&euro;</td>
+							<td>GQEYMX170231</td>
+							<td>13/07/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>18&euro;</td>
+							<td>UJDTSI252548</td>
+							<td>13/07/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.33&euro;</td>
+							<td>DAESRI063530</td>
+							<td>13/07/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>16.16&euro;</td>
+							<td>YCBISC314708</td>
+							<td>13/07/2014</td>
+						</tr>
+												<tr>
+							<td>ANESVAD</td>
+							<td>7.02&euro;</td>
+							<td>GIKXDV299327</td>
+							<td>13/07/2014</td>
+						</tr>
+						
+					</tbody>
+				</table>
+				<h3 id="donations_june">June</h3>
+				
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 113.28&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>UNICEF</td>
+							<td>12.78&euro;</td>
+							<td>ALEPUU200265</td>
+							<td>03/06/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>0.15&euro;</td>
+							<td>MWNBOE740674</td>
+							<td>07/06/2014</td>
+						</tr>
+
+						<tr>
+							<td>Intermon Oxfam</td>
+							<td>0.15&euro;</td>
+							<td>EFSWFA407743</td>
+							<td>08/06/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.05&euro;</td>
+							<td>KFNMJB186648</td>
+							<td>09/06/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.05&euro;</td>
+							<td>RYMXNK071569</td>
+							<td>10/06/2014</td>
+						</tr>
+
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>0.42&euro;</td>
+							<td>FSYOHO634029</td>
+							<td>11/06/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.15&euro;</td>
+							<td>CDTHXG635864</td>
+							<td>12/06/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>0.4&euro;</td>
+							<td>EJIIRP462042</td>
+							<td>12/06/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.16&euro;</td>
+							<td>PVZMTV391832</td>
+							<td>12/06/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.03&euro;</td>
+							<td>TOPIJV195543</td>
+							<td>12/06/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>7&euro;</td>
+							<td>ZARIJK838669</td>
+							<td>13/06/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>14.19&euro;</td>
+							<td>QSWGQC344301</td>
+							<td>14/06/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>0.15&euro;</td>
+							<td>HXLLGQ122146</td>
+							<td>15/06/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>GQKRPB253800</td>
+							<td>15/06/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el hambre</td>
+							<td>11.96&euro;</td>
+							<td>GHSSMN211786</td>
+							<td>18/06/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>15.79&euro;</td>
+							<td>MLDQPP0438100</td>
+							<td>19/06/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5&euro;</td>
+							<td>HQIOLX147165</td>
+							<td>23/06/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>0.3&euro;</td>
+							<td>FIEFKN492810</td>
+							<td>26/06/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>13.27&euro;</td>
+							<td>QWWOJI119932</td>
+							<td>29/06/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>6.075&euro;</td>
+							<td>EFJMQQ102661</td>
+							<td>30/06/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el hambre</td>
+							<td>0.2&euro;</td>
+							<td>JUEOYB585557</td>
+							<td>30/06/2014</td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- May -->
+				<h3 id="donations_may">May</h3>
+				
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 103.13&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>12.94&euro;</td>
+							<td>SSLDPE332099</td>
+							<td>03/05/2014</td>
+						</tr>
+						<tr>
+							<td>Intermon Oxfam</td>
+							<td>10.05&euro;</td>
+							<td>PLFDDE432298</td>
+							<td>09/05/2014</td>
+						</tr>
+
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>11.29&euro;</td>
+							<td>SLOPRT295443</td>
+							<td>11/05/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>13.27&euro;</td>
+							<td>ASPOTI325478</td>
+							<td>15/05/2014</td>
+						</tr>
+						<tr>
+							<td>Intermon Oxfam</td>
+							<td>11.33&euro;</td>
+							<td>QOPOLS124392</td>
+							<td>16/05/2014</td>
+						</tr>
+
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.69&euro;</td>
+							<td>BABPOU170676</td>
+							<td>19/05/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>1.07&euro;</td>
+							<td>VYSIRJ382765</td>
+							<td>23/05/2014</td>
+						</tr>
+						<tr>
+							<td>Acción contra el Hambre</td>
+							<td>10.41&euro;</td>
+							<td>CXIODM524719</td>
+							<td>24/05/2014</td>
+						</tr>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>1.50&euro;</td>
+							<td>ZRORHJ503784</td>
+							<td>26/05/2014</td>
+						</tr>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>7.50&euro;</td>
+							<td>CLIUXQ358350</td>
+							<td>26/05/2014</td>
+						</tr>
+						<tr>
+							<td>Amnistía Internacional</td>
+							<td>1.50&euro;</td>
+							<td>UNJNGP176479</td>
+							<td>26/05/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>1.50&euro;</td>
+							<td>VSWAEC349997</td>
+							<td>27/05/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>10.04&euro;</td>
+							<td>CTUGXF358615</td>
+							<td>27/05/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>0.02&euro;</td>
+							<td>OBTPRO040346</td>
+							<td>28/05/2014</td>
+						</tr>
+						<tr>
+							<td>ANESVAD</td>
+							<td>5.025&euro;</td>
+							<td>FVYSFA012930</td>
+							<td>29/05/2014</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- April table-->	
+
+				<h3 id="donations_april">April</h3>
+				
+				
+				<p>
+					<span id="total_donated"><b>Total donated:</b></span> 91.45&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>15.03&euro;</td>
+							<td>AEKOPP3496301</td>
+							<td>03/04/2014</td>
+						</tr>
+						<tr>
+							<td>Intermon Oxfam</td>
+							<td>10.90&euro;</td>
+							<td>POSMJKD2093422</td>
+							<td>07/04/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>12.27&euro;</td>
+							<td>LKDFGR0931998</td>
+							<td>17/04/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>16.55&euro;</td>
+							<td>KLDDDS1009821</td>
+							<td>21/04/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>11.36&euro;</td>
+							<td>POPRTY8933321</td>
+							<td>22/04/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>13.50&euro;</td>
+							<td>BLKRQW8932399</td>
+							<td>22/04/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>11.84&euro;</td>
+							<td>MMYUHG01118933</td>
+							<td>30/04/2014</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 id="donations_march">March</h3>
+				
+				
+				<p id="total_donated_march">
+					<b>Total donated:</b> 57.60&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet" style="margin-bottom: 50px;">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>UNICEF</td>
+							<td>13.35&euro;</td>
+							<td>AEMNBX3496440</td>
+							<td>05/03/2014</td>
+						</tr>
+						<tr>
+							<td>UNICEF</td>
+							<td>11.90&euro;</td>
+							<td>EPLLGK7440218</td>
+							<td>13/03/2014</td>
+						</tr>
+						<tr>
+							<td>Intermon Oxfam</td>
+							<td>10.70&euro;</td>
+							<td>PLFFHJ1365881</td>
+							<td>17/03/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>13.10&euro;</td>
+							<td>QWPOLG1034256</td>
+							<td>22/03/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>11.05&euro;</td>
+							<td>POPRTY2254906</td>
+							<td>28/03/2014</td>
+						</tr>
+						<tr>
+							<td>Save the Children</td>
+							<td>14.45&euro;</td>
+							<td>EWOPTH0542189</td>
+							<td>30/03/2014</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h3 id="current_month">February</h3>
+				<p id="donations_explain">Congratulations to all of you
+					spoorers, because thanks to your trust we have finished our first
+					month of socially responsible instant messaging and we have already
+					send our first donations to NGO's.</p>
+				
+				<p id="total_donated_month">
+					<b>Total donated:</b> 57.60&euro;
+				</p>
+
+				<table id="hor-minimalist-b" summary="Employee Pay Sheet">
+					<thead>
+						<tr>
+							<th scope="col" id="headerEntity">Social Entity</th>
+							<th scope="col" id="headerAmount">Amount</th>
+							<th scope="col" id="headerCode">Donation Code</th>
+							<th scope="col" id="headerDate">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>10.35&euro;</td>
+							<td>AATESD0025320</td>
+							<td>15/02/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>12.60&euro;</td>
+							<td>ABTFSK0427370</td>
+							<td>18/02/2014</td>
+						</tr>
+						<tr>
+							<td class="redCross">Red Cross</td>
+							<td>13.10&euro;</td>
+							<td>QWPOHG9344312</td>
+							<td>22/02/2014</td>
+						</tr>
+						<tr>
+							<td>Intermon Oxfam</td>
+							<td>10.45&euro;</td>
+							<td>BGFZZP3398343</td>
+							<td>20/02/2014</td>
+						</tr>
+						<tr>
+							<td>Intermon Oxfam</td>
+							<td>11.10&euro;</td>
+							<td>KJDHWW9238299</td>
+							<td>27/02/2014</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+		
+		</div>
+
+	</div>
+	<div data-role="footer">
+
+			<h3>
+				<a
+					style="text-decoration: none; color: white; font-weight: normal !important;"
+					href="mailto:contact@myspoora.com?subject=Meet us at MWC2014">contact@myspoora.com</a>
+				| <span id="madeIn">made in Barcelona</span>
+			</h3>
+		</div>
+
+	</section>
+	<!----------------- end donations page ------------------------>
+	<section id="faq" data-role="page" data-scroll="false">
+	<header data-role="header" data-position="persistent"  data-id="toolbarMenu">
+		<div id="menuOptions">
+		<ul>
+			<li><a href="#login-register" data-transition=""  data-direction="reverse"> Inicio </a></li>
+			<li><a href="#donations" class="donations_history" data-transition="">Histórico donaciones</a></li>
+			<li><a href="#faq" class="ui-btn-active" data-transition="">FAQ</a></li>
+			<li><a rel="external" href="https://www.myspoora.com/blog">Blog</a></li>
+			<!--li><a href="">FAQ</a></li-->
+			<li><a class="contact" href="mailto:contact@myspoora.com?subject=support">Contact</a></li>
+			<li><a href="https://www.facebook.com/pages/Spoora/1402782556647772">Facebook</a></li>
+
+		</ul>
+	</div>
+
+	  </header>
+	<div class="content" data-role="content" style="height: auto !important;">
+
+		<div class="ui-grid-b descPanel">
+
+			<div class="centeredDiv"
+				style="width: auto !important; margin-bottom: 30px;">
+				<h2>FAQ</h2>
+
+				<h3>¿Qué es y cómo funciona spoora?</h3>
+
+				<p>Spoora es una plataforma de mensajería instantánea que permite a los usuarios redistribuir parte de los ingresos por publicidad generados por la propia aplicación hacia proyectos sociales y ONGs.</p>
+
+				<u>¿Cómo es esto posible? Gracias a los spooris.</u>
+
+				<p>Los usuarios podrán acumular spooris mediante el envío de mensajes instantáneos, agregación de nuevos contactos, participación en programa EMBAJADORES SPOORA, etc.. , los cuales podrán ser canjeados por donaciones a diversas ONGs / entidades sociales o solicitar su cobro mediante un canje equivalente en euros. En caso de escoger la opción de cobro, el 50% del importe canjeado irá destinado, a modo de donación, a la ONG / entidad social del mes.</p>
+
+				<p>La aplicación es completamente gratuita y se encuentra disponible para su descarga en Google Play Store.  Actualmente la versión para iOS (iPhone / iPad) se encuentra en fase de desarrollo.</p>
+
+
+				<h3>¿Dónde consulto los spooris acumulados y el saldo equivalente asociado?</h3>
+
+				<p>Accediendo al panel de gestión pulsando encima del contador de spooris que aparece en la parte superior de las conversaciones o mediante la opción -panel de gestión- dentro del menú principal. Una vez allí, el usuario podrá consultar su saldo equivalente mediante la conversión de los spooris que se tenga en ese momento gracias a la aplicación de la ecuación de canje vigente durante ese mes.</p>
+
+				<h3>Opciones de canje:</h3>
+
+
+				<b>a) Donación del 100% saldo acumulado a ONGs y entidades sociales.</b><br/><br/>
+
+				<p><u>Importante:</u> Para poder solicitar la donación es NECESARIO E INDISPENSABLE que el usuario haya validado su número de teléfono previamente. La verificación se puede realizar al instalar la aplicación por primera vez o siempre que se quiera pulsando el campo “Teléfono” en la pantalla correspondiente al Perfil del usuario Spoora.<br/><br/>
+
+				Una vez iniciado el proceso, el panel de gestión mostrará un listado de entidades (ONGs) candidatas a recibir la donación. El usuario debe escoger una entidad en concreto y pulsar el botón -Procesar DONACIÓN-. A continuación, Spoora verificará el proceso mediante una consulta al servidor central. Una vez se haya verificado satisfactoriamente, la aplicación mostrará un mensaje confirmando que la solicitud de canje se ha procesado correctamente e incluirá un código de DONACIÓN con el que se podrá monitorizar el estado del proceso de donación mediante la página web www.myspoora.com. Una vez finalizado el proceso, el contador de Spooris volverá a 0.<br/><br/>
+
+				<u>Seguimiento de la solicitud de canje (donación)</u><br/><br/>
+
+				Spoora realizará la donación de la cantidad canjeada en un plazo máximo de 90 días (en función del día del mes en el que se haya procesado la donación, ésta se realizará con mayor o menor rapidez). Gracias al código de donación, se podrá realizar un seguimiento de la misma mediante el historial de donaciones publicado en la web www.myspoora.com. Dicho registro se actualizará regularmente incluyendo los códigos asociados a cada proceso de canje registrado, el importe del mismo, y la entidad destinataria de la donación.<br/><br/>
+				</p>
+
+
+
+				<b>b) Cobrar el 50% y donar el 50% restante a la ONG del mes.</b><br/><br/>
+
+				<p>El saldo mínimo equivalente necesario para esta opción es de 10 euros.<br/><br/>
+
+				Importante: Para poder solicitar el cobro es NECESARIO E INDISPENSABLE que el usuario haya validado su número de teléfono previamente. La verificación se puede realizar al instalar la aplicación por primera vez o siempre que se quiera pulsando el campo “Teléfono” en la pantalla correspondiente al Perfil del usuario Spoora.<br/><br/>
+
+				Existen dos posibilidades de cobro: transferencia bancaria y Paypal.<br/><br/>
+
+				La opción de transferencia bancaria solo está disponible para cuentas corrientes domiciliadas
+				en entidades españolas pertenecientes al sector de la banca tradicional (no banca on-line). En caso de escoger esta opción, se deberá introducir el nombre de la entidad bancaria y el código IBAN de la cuenta corriente (código IBAN ESXX XXXX XXXX XX XXXXXXXXXX).<br/><br/>
+				 
+				En caso de escoger la opción de PayPal, se deberá introducir el nombre del titular de la cuenta a la
+				cuenta Paypal y el mail asociado a dicha cuenta.<br/><br/>
+
+				<u>Muy importante:</u><br/><br/>
+				Para poder procesar el cobro satisfactoriamente es necesario que la cuenta PayPal esté correctamente verificada y  vinculada con el correo electrónico indicado por el usuario y con su cuenta bancaria.  Una vez realizado el cobro, éste deberá ser aceptado en menos de 30 días dado que, en caso contrario, este será retornado a spoora.<br/><br/>
+				</p>
+
+				<h3>Periodos de cobro:</h3>
+
+				<p>La solicitud de canje se puede solicitar en cualquier momento siempre que se disponga del saldo mínimo equivalente. <u>La ejecución  del cobro se producirá siempre a doble mes vencido.</u> El importe del mismo será transferido a la cuenta PayPal o a la cuenta bancaria indicada <u>durante los primeros 25 días del segundo mes entrante.</u> En conclusión, el plazo máximo de cobro oscilará entre los 60 y los 90 días en función del día del mes en que se haya solicitado.</p>
+
+				<p>Por ejemplo: si se solicita el canje el día 17 de febrero, este se ejecutará (se iniciará el proceso de abono del mismo) el día 1 del mes de abril y será transferido a la cuenta Paypal o bancaria durante los primeros 25 días de ese mismo mes).</p>
+
+				<p>En todo caso, Spoora se reserva el derecho a retrasar puntualmente e incluso anular aquellas solicitudes de canje susceptibles de haber sido provocadas debido a un uso fraudulento de la aplicación.  A su vez, y de manera excepcional, el abono de los cobros podrá demorarse algunos días adicionales más en caso de producirse alguna incidencia relacionada con el usuario solicitante del canje o, a nivel general, relacionada con el propio  proceso de registro, ejecución y abono de los importes canjeados.</p>
+
+				<h3>¿Qué es y como funciona la ecuación de canje?</h3>
+  
+				<p>La ecuación de canje es un mecanismo mediante el cual se puede canjear los spooris acumulados en saldo equivalente. Consiste en una relación entre los spooris necesarios para obtener X euros.</p>
+
+				<p>La ecuación de canje es de alcance mensual. Durante los primeros días de cada mes, el sistema puede realizar un reajuste (al alza o a la baja) de dicha ecuación. Una vez realizado el reajuste este tendrá validez durante todo el mes, es decir, la ecuación permanecerá invariable, como mínimo,
+				durante ese mes.</p>
+
+				<p>Tanto las solicitudes de donación como de cobro se rigen por la ecuación de canje que esté activa en ese momento. Pese a que los cobros y las donaciones se ejecuten a doble mes vencido, el importe de los mismos se regirá por la ecuación de canje activa durante la solicitud.</p>
+
+				<p>Como se ha comentado en el punto anterior, la ecuación de canje es de aplicación mensual. Cada mes tendrá asociado una ecuación de canje. Esta podrá variar de un mes a otro pero puede darse el caso que durante varios meses seguidos ésta permanezca invariable. Los parámetros de modificación se basaran en el número de visualizaciones registradas durante meses anteriores, número de usuarios, ingresos generados por publicidad en periodos anteriores, etc... </p> 
+
+				<h3>Sistema de acumulación de spooris: Reglas y limitaciones.</h3>
+				<p>
+					Para evitar el uso fraudulento y mal intencionado de la aplicación se ha establecido unos parámetros de control en el sistema de acumulación de spooris (puntos). El uso normal de la aplicación no debería, en ningún caso, suponer ningún impedimento a la hora de acumular spooris</b>
+				</p>
+				<p>
+				  En función del número de spooris acumulados el incremento por el correcto envío de mensajes variará.
+				</p>
+				<p>
+				  <b>0-999 spooris</b>:      El incremento por mensaje enviado será de 3 spooris / mensaje.<br/><br/>
+				  <b>1000-1999 spooris</b>:  El incremento por mensaje enviado será de 2 spooris / mensaje.<br/><br/>
+				  <b>2000 spooris o más</b>: El incremento por mensaje enviado será de 1 spoori  / mensaje.<br/><br/>
+				</p>
+				<p>
+				  Con esta escala de incrementos se busca premiar el uso de la aplicación durante los primeros dias de uso
+				  e incentivar a los usuarios a realizar sus primeras donaciones a las entidades seleccionadas dentro de la aplicación.<br/>
+				  Cabe destacar que el incremento por defecto es de un 1 spoori / mensaje. Los incrementos superiores establecidos entre
+				  los 0 y los 1999 spooris se han implementado a modo de promoción. 
+				</p>
+				<p>
+				  <u>Limitaciones en la acumulación de spooris:</u>
+				</p>
+				<p>
+				  1- El límite mensual de acumulación de spooris es de <b>40.000</b> spooris mensuales.<br/><br/>
+
+				  2- El límite diario de acumulación de spooris es de <b>1.200</b> spooris / día. (solo aplicable a envío de mensajes)<br/><br/>
+
+				  3- El límite por minuto de acumulación de spooris es de <b>16</b> spooris / minuto. (solo aplicable a envío de mensajes)<br/><br/>
+				</p>
+				  <p>
+				  Los limites establecidos en los tres apartados no deberían afectar, en ningún caso, el uso correcto, habitual y continuado de la aplicación. Si se supera alguno de esos tres límites la aplicación seguirá funcionando correctamente pero ésta no volverá a habilitar el sistema de incremento hasta que la limitación quede anulada (transcurran 5 minutos, un día / mes). En el caso de la limitación por mes, aclarar que esta corresponde a meses naturales. Por ejemplo, si se sobrepasa el límite el 27 de marzo, el sistema de incremento de spooris volverá a activarse el primer dia del siguiente mes natural, es decir, el 1 de abril. El hecho de que no se deshabilite el sistema de incremento de spooris no implica que el sistema no haya detectado un uso fraudulento de la aplicación.  Spoora se reserva el derecho a anular cualquier solicitud de cobro fruto de prácticas mal intencionadas en el proceso de acumulación de spooris y/o violación sistemática de las limitaciones establecidas por el sistema.
+				</p>
+				<p>
+				  <u>Importante:</u> Los incrementos producidos fruto de la aplicación del programa EMBAJADORES SPOORA no se ven afectados por las limitaciones por minuto y diaria.</p>
+				<p>
+					<u>Prácticas mal intencionadas y/o uso fraudulento de la aplicación</u>
+				</p>
+				<p>
+				Spoora prioriza al máximo la seguridad y la privacidad del flujo de datos e información enviado a través de la aplicación. <b>En ningún caso, el sistema puede acceder, rastrear y/o monitorizar el contenido de los mensajes enviados / recibidos.</b> Bajo esta premisa, se ha incorporado al sistema un conjunto de medidas con el objetivo de mejorar la seguridad en la plataforma y garantizar un uso correcto y adecuado.  El uso normal de la aplicación no debería, en ningún caso, suponer ningún impedimento a la hora de acumular spooris.
+
+				</p>
+
+				<p>¿Qué entiende el sistema como uso fraudulento de la aplicación?<br/><br/>
+
+				-Envío de mensajes masivos a un mismo usuario el cual no sea activo (mande mensajes de manera “regular” a otros destinatarios y/o al mismo del cual recibe esos mensajes).<br/><br/>
+
+				-Autoagregación de contactos (envío de mensajes a PINs ficticios o creados de manera irregular)<br/><br/>
+
+				-Envío de mensajes por saturación (spam)<br/><br/>
+
+				-La agregación de contactos creados de manera irregular, envío de mensajes a usuarios bloqueados / no activos o envío de mensajes masivos cortos que implique superar la frecuencia de envío máxima establecida por minuto (16 mensajes / minuto).<br/><br/>
+
+				-Cualquier tipo de práctica que suponga un uso “no racional” de la aplicación.<br/><br/>
+
+				-La utilización de aplicaciones y/o cualquier otra herramienta o servicio que impida la correcta visualización de los anuncios (bloqueadores de publicidad) será motivo de bloqueo y anulación de cuenta de usuario de manera definitiva e irrevocable. A su vez, todos los cobros solicitados serán anulados debido a la violación manifiesta y fragante de las normas de convivencia y buen uso de la aplicación.<br/><br/>
+
+
+				</p>
+
+				<p>
+					Spoora se reserva el derecho a anular cualquier solicitud de cobro fruto de prácticas mal intencionadas en el proceso de acumulación de spooris y/o violación sistemática de las medidas de seguridad y estabilidad establecidas por el sistema. A su vez, Spoora también podrá bloquear temporalmente y/o de manera definitiva cualquier usuario (ya sea mediante código PIN o número de teléfono) que infrinja de manera sistemática y repetitiva las normas de convivencia definidas en los párrafos anteriores.
+				</p>
+
+				<h3>Programa EMBAJADORES SPOORA</h3>
+				<p>
+					Este programa premia a aquellos spoorers (usuarios de spoora) que recomienden la descarga y el uso de spoora entre sus contactos. Mediante el sistema de referencia, tanto el nuevo usuario como el spoorer que ha recomendado el uso de la aplicación, ganarán de manera automática e instantánea 500 spooris. ( cuando un usuario haya sido referenciado 10 veces o más, la gratificación será de 200 spooris).
+
+				</p>
+				<p>
+					Funcionamiento:<br/><br/>
+
+					1-Un usuario se descarga spoora por primera vez.<br/><br/>
+  
+					2-Al ejecutar spoora por primera vez, le preguntará si desea validar su número de teléfono (necesario para poder chatear con todos los contactos de su agenda sin necesidad de ir agregándolos individualmente mediante el sistema PIN). Es necesario que valide el número de teléfono ya que, en caso contrario, el programa EMBAJADORES NO tendrá efecto.<br/><br/>
+
+					3-Introducir el PIN (parte inferior del formulario de valicación) del usuario EMBAJADOR SPOORA.<br/><br/>
+
+					4-Una vez validado el número de teléfono correctamente (habiendo recibido el SMS de confirmación que no deberá borrarse dado que incluye un identificador personal necesario para el correcto funcionamiento de la aplicación) y verificado el PIN del EMBAJADOR, ambos usuarios verán incrementados sus contadores en 500/300 spooris automáticamente.<br/><br/>
+
+				</p>
+
+				<p>
+				 <u>Normas básicas:</u><br/><br/>
+
+				  *Solo pueden beneficiarse del programa EMBAJADORES SPOORA aquellos usuarios que instalen por PRIMERA VEZ spoora en su dispositivo móvil.<br/><br/>
+
+				  *Pese a que Spoora es compatible con dispositivos WIFI, es necesario que el nuevo usuario se descargue spoora en un dispositivo con conectividad móvil. En caso contrario no podrá recibir el SMS de validación y beneficiarse del programa EMBAJADORES SPOORA.<br/><br/>
+
+				  *La correcta validación por número de teléfono es básica y obligatoria. Esta medida es necesaria para poder verificar el buen uso de la promoción y evitar la reinstalación sistemática de la aplicación. En todo caso, el sistema incrementará los contadores de spooris fruto de la promoción, solamente en la PRIMERA validación. Posteriores validaciones de un mismo número de teléfono no podrán acogerse al programa EMBAJADORES SPOORA.<br/><br/>
+
+				 *Las 10 primeras referencias a un mismo PIN EMBAJADOR serán gratificadas con 500 spooris.Posteriores referencias serán premiadas con una gratificación de 300 spooris.<br/><br/>
+
+				</p>
+			</div>
+		
+		</div>
+
+	</div>
+
+		</section>
+	<div data-role="footer">
+
+			<h3>
+				<a
+					style="text-decoration: none; color: white; font-weight: normal !important;"
+					href="mailto:contact@myspoora.com?subject=Meet us at MWC2014">contact@myspoora.com</a>
+				| <span id="madeIn">made in Barcelona</span>
+			</h3>
+		</div>
+
+	</section>
+	<!----------------- end donations page ------------------------>
+	<section id="dialogRemove" data-role="page"> <header
+		data-role="header" data-position="inline" data-id="toolbarMenu">
+	<h1>Remove Contact?</h1>
+	</header>
+
+	<div class="content" data-role="content">
+		<p>Do you want to remove the contact?</p>
+	</div>
+	<div data-role="footer">
+		<h4></h4>
+	</div>
+	</section>
+
+	<div class="notificationsBox">
+		<div class='notification'></div>
+	</div>
+
+</body>
+</html>

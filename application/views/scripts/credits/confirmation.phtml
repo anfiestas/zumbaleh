@@ -1,0 +1,127 @@
+<?php $translate=Zend_Registry::get('Zend_Translate'); ?>
+<?php
+
+$this->headTitle($translate->_("n2manager_title"));
+$this->headTitle($translate->_("confirmation_title1"));
+$this->headTitle()->setSeparator(' | ');
+?>
+
+<script type="text/javascript">
+function submitForm(gateway)
+{
+  var gatewaySelected = gateway;
+  var orderValue=<?php echo $this->order; ?>;
+  var callURL="<?php echo $this->baseUrl('transactions/'.$this->order); ?>";
+  
+  
+  $.ajax({
+   type: "POST",
+   url: callURL,
+   data: "order_id="+orderValue+"&gateway="+escape(gatewaySelected),
+   success: function(msg){
+    
+     if(gatewaySelected=="LaCaixa")
+	document.forms["payByLaCaixa"].submit();
+     else if(gatewaySelected=="PayPal")
+        document.forms["payByPayPal"].submit();
+   }
+ });
+  
+  
+}
+</script> 
+<?php  $paymentSession = new Zend_Session_Namespace('payment');?>
+<div id="bottomPanel" class="panel">
+    
+	<div class="row">
+			 <h2><?php print $translate->_("confirmation_title1"); ?></h2>
+			 <p>
+			  <?php print $translate->_("confirmation_text1"); ?> <b><?php echo $this->product->getCreditsNumber();?></b> <?php print $translate->_("confirmation_text2"); ?> <b><?php print $this->product->getPriceAndSymbol()." ".$this->userCurrency->getCode(); ?></b>. 
+			  <?php print $translate->_("confirmation_text3"); ?> 
+			  <b><?php echo $this->phoneNumber;?></b> <?php print $translate->_("confirmation_text4"); ?> <b><?php print $translate->_($this->country->getName());?></b>. 
+			 </p>	  
+	</div>
+	
+
+        <div class="column <?php if($this->product->getCurrencyId()!=1)echo "withoutCreditCard"; ?> confirmation">
+		   <h3><?php print $translate->_("pay_with_paypal"); ?></h3>
+             <p>
+			 <?php echo $this->product->getPriceAndSymbol(); ?> + <?php echo $this->paypalCharge; ?> 
+		   <?php print $translate->_("handling_charge"); ?>
+		   </p>
+		     <table>
+				<tr>
+				  <td class="totalPriceData"><span class="totalPrice_text"><?php print $translate->_("total_price"); ?><span class="totalPrice_text"></td>
+				  <td><span class="totalPrice_text"><?php echo $this->totalPriceByPaypal;?></span></td>
+				</tr>
+			</table>
+			<span class="details_text"><?php print $translate->_("taxes_included"); ?></span>
+			 <?php 
+			   if($translate->getLocale()=="es"){
+			   $buttonPath="es_btn_xpressCheckout.gif";
+			   }
+			   elseif($translate->getLocale()=="fr"){
+			   $buttonPath="fr_btn_xpressCheckout.gif";
+			   }
+			   else{
+			   $buttonPath="en_btn_xpressCheckout.gif";
+			   }
+			 $payPalButton= $this->baseUrl()."/"."images/".$buttonPath;
+			 
+			 ?>
+		    <form id="payByPayPal" action="<?php echo $this->url(array('lang'=>$translate->getLocale(),'controller'=>'transactions','action'=>'paypal_init'), null, true);?>" method="post">
+			  <input type=hidden name=order_id  value="<?php echo $this->order; ?>">
+			  <input class="center_image hrefButton" type="image" onClick="submitForm('PayPal');" src="<?php echo $payPalButton;?>" border="0" alt="PayPal - The safer, easier way to pay online.">
+			</form>
+		 
+        </div>
+    
+    
+		<?php if($this->product->getCurrencyId()==1){?>
+	  <div class="lastColumn confirmation">
+	  <img class="floatRight" alt="" src="<?php echo $this->baseUrl()."/"?>images/visa_mastercard.png" width="97" height="37" />
+		<h3><?php print $translate->_("pay_with_card"); ?></h3>
+			<p>
+			<?php echo $this->product->getPriceAndSymbol(); ?> + <?php echo $this->laCaixaCharge; ?> 
+			<?php print $translate->_("handling_charge"); ?>
+			</p>
+			  <table>
+				<tr>
+				  <td class="totalPriceData"><span class="totalPrice_text"><?php print $translate->_("total_price"); ?><span class="totalPrice_text"></td>
+				  <td><span class="totalPrice_text"><?php echo $this->totalPriceByCard;?></span></td>
+				</tr>
+			</table>
+			<span class="details_text"><?php print $translate->_("taxes_included"); ?></span>
+			
+		<form id="payByLaCaixa" method="post" action="<?php echo $this->url_tpv; ?>">
+			
+			<input type=hidden name=Ds_Merchant_Amount value="<?php echo $this->amountLaCaixaFormat; ?>">
+		   
+			<input type=hidden name=Ds_Merchant_Currency value="<?php echo $this->currency; ?>">
+		   
+			<input type=hidden name=Ds_Merchant_Order  value="<?php echo $this->order; ?>">
+			
+			<input type=hidden name=Ds_Merchant_MerchantCode value="<?php echo $this->code; ?>">
+		   
+			<input type=hidden name=Ds_Merchant_Terminal value="<?php echo $this->terminal; ?>">
+		   
+			<input type=hidden name=Ds_Merchant_TransactionType value="<?php echo $this->transactionType; ?>">
+		
+			<input type=hidden name=Ds_Merchant_ConsumerLanguage value="<?php echo $this->languageCode; ?>">
+		   
+			<input type=hidden name=Ds_Merchant_MerchantURL value="<?php echo $this->merchantResponseURL; ?>">
+			<input type=hidden name=Ds_Merchant_UrlOK value="<?php echo $this->userOkResponseURL; ?>">
+			<input type=hidden name=Ds_Merchant_UrlKO value="<?php echo $this->userErrorResponseURL; ?>"> 
+			
+			<input type=hidden name=Ds_Merchant_MerchantSignature value="<?php echo $this->signature; ?>">
+			
+			<input type=hidden name=Ds_Merchant_MerchantName value="<?php echo $this->merchantName; ?>">
+			
+			
+			<button class="center_image button" type="button" onClick="submitForm('LaCaixa');"><?php print $translate->_("pay_with_card_button"); ?></button>
+		</form>
+		
+	  </div>		
+		<?php } ?>
+     
+</div>

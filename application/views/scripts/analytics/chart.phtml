@@ -1,0 +1,118 @@
+
+ <?php $translate=Zend_Registry::get('Zend_Translate'); ?>
+<script src="<?php echo $this->baseUrl('analytics/jquery.min.js'); ?>"></script>
+<script src="<?php echo $this->baseUrl('analytics/highcharts.js'); ?>"></script>
+<script src="<?php echo $this->baseUrl('analytics/exporting.js'); ?>"></script>
+<script> 
+
+$(function () { 
+    $('#container').highcharts({
+        chart: {
+            type: 'area',
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Tokens ganados'
+        },
+        xAxis: {
+             title: {
+                text: 'Date',
+
+            },
+           categories: <?php print $this->categoriesDates; ?>,
+           tickInterval: 30 ,
+        },
+        yAxis: {
+            title: {
+                text: 'Percent'
+            }
+        },
+         tooltip: {
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f} users)<br/>',
+            shared: true
+        },
+        plotOptions: {
+            area: {
+                /*pointStart: 1940,*/
+                stacking: 'percent',
+                lineColor: '#ffffff',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#ffffff'
+                }
+            }
+        },
+        series: [{
+            name: 'No ganan ningun token',
+            data: <?php print $this->usersWithZeroTokens; ?>
+        },{
+            name: 'Ganan mas de 1 token',
+            data: <?php  print $this->usersWithMoreThan1Token; ?>
+     	}]
+    });
+});
+
+//CHART 2
+$(function () { 
+    $('#container2').highcharts({
+        chart: {
+            type: 'area',
+            zoomType: 'x'
+        },
+        title: {
+            text: 'Conversaciones creadas'
+        },
+        xAxis: {
+             title: {
+                text: 'Date',
+
+            },
+           categories: <?php print $this->categoriesDates2; ?>,
+           tickInterval: 30 ,
+        },
+        yAxis: {
+            title: {
+                text: 'Percent'
+            }
+        },
+         tooltip: {
+            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y:,.0f} users)<br/>',
+            shared: true
+        },
+        plotOptions: {
+            area: {
+                /*pointStart: 1940,*/
+                stacking: 'percent',
+                lineColor: '#ffffff',
+                lineWidth: 1,
+                marker: {
+                    lineWidth: 1,
+                    lineColor: '#ffffff'
+                }
+            }
+        },
+        series: [{
+            name: 'Ninguna conversacion',
+            data: <?php print $this->usersWithZeroConvs; ?>
+        },{
+            name: 'Hasta 3 conversaciones',
+            data: <?php  print $this->usersWithMax3Convs; ?>
+        },
+        {
+            name: 'Mas de 3 conversaciones',
+            data: <?php  print $this->usersWithMore3Convs; ?>
+        }]
+    });
+});
+
+</script>
+
+ <div id="container" style="width:100%; height:400px;">
+
+ </div>
+
+  <div id="container2" style="width:100%; height:400px;">
+
+ </div>
+<br><br><br>

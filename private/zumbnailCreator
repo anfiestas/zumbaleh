@@ -1,0 +1,6 @@
+/usr/lib/php5/libexec/ffmpeg -itsoffset -1 -y -i /usr/share/nginx/www/tmp/$1 -vcodec mjpeg -vframes 4 -an -f rawvideo -s 512x384 /usr/share/nginx/www/tmp/$1.thumb </dev/null >/dev/null 2>/usr/share/nginx/www/tmp/ffmepg.log
+
+/usr/lib/php5/libexec/ffmpeg -itsoffset -1 -y -i /usr/share/nginx/www/tmp/$1 -vcodec mjpeg -vframes 4 -an -f rawvideo -s 96x96 /usr/share/nginx/www/tmp/$1.mini </dev/null >/dev/null 2>/usr/share/nginx/www/tmp/ffmepg.log
+
+/usr/lib/php5/libexec/ffmpeg -itsoffset -1 -y -i /usr/share/nginx/www/tmp/$1 -vcodec mjpeg -vframes 4 -an -f rawvideo -s 256x192 /usr/share/nginx/www/tmp/$1.normal </dev/null >/dev/null 2>/usr/share/nginx/www/tmp/ffmepg.log
+
