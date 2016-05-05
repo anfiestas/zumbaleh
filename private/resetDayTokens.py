@@ -5,7 +5,7 @@ import datetime
 import time
 
 #connecting to DB
-conn = MySQLdb.connect('localhost','spoorer1','.i$W!:3+5@@V"/v', 'spoora')
+conn = MySQLdb.connect('localhost','','', '')
 cursor = conn.cursor()
 #foreach symbol update DB
 now=datetime.datetime.now()
