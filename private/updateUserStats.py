@@ -4,8 +4,8 @@ import datetime
 import time
 
 #connecting to DB
-conn = MySQLdb.connect('localhost','spoorer1','.i$W!:3+5@@V"/v', 'spoora')
-conn2 =  MySQLdb.connect('localhost','spoorer1','.i$W!:3+5@@V"/v', 'spoora')
+conn = MySQLdb.connect('localhost','','', '')
+conn2 =  MySQLdb.connect('localhost','','', '')
 cursor = conn.cursor()
 cursor2 = conn2.cursor()
 #foreach symbol update DB
